@@ -1,18 +1,18 @@
 import { FormlyFieldConfig, FormlyTemplateOptions } from '@ngx-formly/core';
 
 export class FormField implements FormlyFieldConfig {
-  static checkbox(
-    key: string,
+  static checkbox<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     return this.field(key, 'checkbox', templateOptions, options);
   }
 
-  static date(
-    key: string,
+  static date<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     return this.input(
       key,
@@ -21,10 +21,10 @@ export class FormField implements FormlyFieldConfig {
     );
   }
 
-  static datetime(
-    key: string,
+  static datetime<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     return this.input(
       key,
@@ -33,17 +33,16 @@ export class FormField implements FormlyFieldConfig {
     );
   }
 
-  static email(
-    key: string,
+  static email<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     const defaults = {
       type: 'email',
       label: 'Email',
     };
     const defaultOptions = { validators: { validation: ['email'] } };
-
     return this.input(
       key,
       { ...defaults, ...templateOptions },
@@ -61,8 +60,8 @@ export class FormField implements FormlyFieldConfig {
     };
   }
 
-  static field(
-    key: string,
+  static field<T>(
+    key: Extract<keyof T, string>,
     type?: string,
     templateOptions: FormlyTemplateOptions = {},
     config: FormlyFieldConfig = {}
@@ -77,26 +76,26 @@ export class FormField implements FormlyFieldConfig {
     };
   }
 
-  static input(
-    key: string,
+  static input<T>(
+    key: Extract<keyof T, string>,
     templateOptions: FormlyTemplateOptions = {},
     config: FormlyFieldConfig = {}
   ): FormlyFieldConfig {
     return this.field(key, 'input', templateOptions, config);
   }
 
-  static multicheckbox(
-    key: string,
+  static multicheckbox<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     return this.field(key, 'multicheckbox', templateOptions, options);
   }
 
-  static number(
-    key: string,
+  static number<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     return this.input(
       key,
@@ -105,10 +104,10 @@ export class FormField implements FormlyFieldConfig {
     );
   }
 
-  static password(
-    key: string,
+  static password<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     const defaults = {
       label: 'Password',
@@ -120,26 +119,26 @@ export class FormField implements FormlyFieldConfig {
     return this.input(key, { ...templateOptions, ...defaults }, options);
   }
 
-  static radio(
-    key: string,
+  static radio<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     return this.field(key, 'radio', templateOptions, options);
   }
 
-  static select(
-    key: string,
+  static select<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     return this.field(key, 'select', templateOptions, options);
   }
 
-  static textarea(
-    key: string,
+  static textarea<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     const defaultTemplateOptions = { rows: 5 };
 
@@ -155,10 +154,10 @@ export class FormField implements FormlyFieldConfig {
     return { type: 'formly-template', template };
   }
 
-  static time(
-    key: string,
+  static time<T>(
+    key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,
-    options?: any
+    options?: FormlyFieldConfig
   ): FormlyFieldConfig {
     return this.input(
       key,

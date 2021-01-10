@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { FormField } from '@ngfire-showcase/shared/ui/forms';
 
+type UserAuth = {
+  email: string;
+  password: string;
+}
+
 @Component({
   selector: 'ngfire-showcase-root',
   templateUrl: './app.component.html',
@@ -15,10 +20,10 @@ export class AppComponent {
   };
   form = new FormGroup({});
   fields: FormField[] = [
-    FormField.email('email', { addonLeft: { icon: 'at' }, required: true })
+    FormField.email<UserAuth>('email', { addonLeft: { icon: 'at' }, required: true })
   ];
 
-  submit(value: any): void {
+  submit(value: FormGroup['value']): void {
     console.log(value);
   }
 }
