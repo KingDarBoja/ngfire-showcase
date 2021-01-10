@@ -20,9 +20,7 @@
               "apps/coljobs/src/favicon.ico",
               "apps/coljobs/src/assets"
             ],
-            "styles": [
-              "apps/coljobs/src/styles.scss"
-            ],
+            "styles": ["apps/coljobs/src/styles.scss"],
             "scripts": [],
             "customWebpackConfig": {
               "path": "webpack.config.js"
@@ -86,9 +84,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/coljobs"
-          ],
+          "outputs": ["coverage/apps/coljobs"],
           "options": {
             "jestConfig": "apps/coljobs/jest.config.js",
             "passWithNoTests": true
@@ -121,9 +117,32 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["apps/coljobs-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared-ui-forms": {
+      "projectType": "library",
+      "root": "libs/shared/ui/forms",
+      "sourceRoot": "libs/shared/ui/forms/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "apps/coljobs-e2e/**/*.{js,ts}"
+              "libs/shared/ui/forms/src/**/*.ts",
+              "libs/shared/ui/forms/src/**/*.html"
             ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/ui/forms"],
+          "options": {
+            "jestConfig": "libs/shared/ui/forms/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

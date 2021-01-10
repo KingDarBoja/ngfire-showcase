@@ -29,6 +29,9 @@
     "coljobs-e2e": {
       "tags": [],
       "implicitDependencies": ["coljobs"]
+    },
+    "shared-ui-forms": {
+      "tags": ["scope:shared", "type:ui"]
     }
   }
 }
