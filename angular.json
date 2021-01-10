@@ -20,7 +20,9 @@
               "apps/coljobs/src/favicon.ico",
               "apps/coljobs/src/assets"
             ],
-            "styles": ["apps/coljobs/src/styles.scss"],
+            "styles": [
+              "apps/coljobs/src/styles.scss"
+            ],
             "scripts": [],
             "customWebpackConfig": {
               "path": "webpack.config.js"
@@ -84,11 +86,17 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/coljobs"],
+          "outputs": [
+            "coverage/apps/coljobs"
+          ],
           "options": {
             "jestConfig": "apps/coljobs/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     },
@@ -113,7 +121,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/coljobs-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/coljobs-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
