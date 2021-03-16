@@ -18,6 +18,9 @@
       "@ngfire-showcase/shared/ui/forms": ["libs/shared/ui/forms/src/index.ts"],
       "@ngfire-showcase/shared/data-access/firebase": [
         "libs/shared/data-access/firebase/src/index.ts"
+      ],
+      "@ngfire-showcase/shared/environments": [
+        "libs/shared/environments/src/index.ts"
       ]
     }
   },

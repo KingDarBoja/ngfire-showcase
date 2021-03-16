@@ -35,6 +35,9 @@
     },
     "shared-data-access-firebase": {
       "tags": ["scope:shared", "type:data-access"]
+    },
+    "shared-environments": {
+      "tags": ["scope:shared", "type:environments"]
     }
   }
 }
