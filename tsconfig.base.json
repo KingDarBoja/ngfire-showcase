@@ -15,7 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ngfire-showcase/shared/ui/forms": ["libs/shared/ui/forms/src/index.ts"]
+      "@ngfire-showcase/shared/ui/forms": ["libs/shared/ui/forms/src/index.ts"],
+      "@ngfire-showcase/shared/data-access/firebase": [
+        "libs/shared/data-access/firebase/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

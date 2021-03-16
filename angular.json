@@ -146,6 +146,31 @@
           }
         }
       }
+    },
+    "shared-data-access-firebase": {
+      "projectType": "library",
+      "root": "libs/shared/data-access/firebase",
+      "sourceRoot": "libs/shared/data-access/firebase/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/data-access/firebase/src/**/*.ts",
+              "libs/shared/data-access/firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/data-access/firebase"],
+          "options": {
+            "jestConfig": "libs/shared/data-access/firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -32,6 +32,9 @@
     },
     "shared-ui-forms": {
       "tags": ["scope:shared", "type:ui"]
+    },
+    "shared-data-access-firebase": {
+      "tags": ["scope:shared", "type:data-access"]
     }
   }
 }
