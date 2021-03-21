@@ -32,6 +32,10 @@
                 {
                   "replace": "libs/shared/environments/src/lib/environment.ts",
                   "with": "libs/shared/environments/src/lib/environment.prod.ts"
+                },
+                {
+                  "replace": "libs/data-access/firebase/src/lib/firebase-initialization.ts",
+                  "with": "libs/data-access/firebase/src/lib/firebase-initialization.prod.ts"
                 }
               ],
               "optimization": true,
