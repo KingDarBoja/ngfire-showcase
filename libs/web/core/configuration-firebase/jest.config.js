@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'shared-data-access-firebase',
+  displayName: 'web-core-configuration-firebase',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,8 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/shared/data-access/firebase',
+  coverageDirectory:
+    '../../../../coverage/libs/web/core/configuration-firebase',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

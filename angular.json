@@ -30,12 +30,12 @@
             "production": {
               "fileReplacements": [
                 {
-                  "replace": "libs/shared/environments/src/lib/environment.ts",
-                  "with": "libs/shared/environments/src/lib/environment.prod.ts"
+                  "replace": "libs/web/core/environments/src/lib/environment.ts",
+                  "with": "libs/web/core/environments/src/lib/environment.prod.ts"
                 },
                 {
-                  "replace": "libs/data-access/firebase/src/lib/firebase-initialization.ts",
-                  "with": "libs/data-access/firebase/src/lib/firebase-initialization.prod.ts"
+                  "replace": "libs/web/core/configuration-firebase/src/lib/firebase-initialization.ts",
+                  "with": "libs/web/core/configuration-firebase/src/lib/firebase-initialization.prod.ts"
                 }
               ],
               "optimization": true,
@@ -126,76 +126,76 @@
         }
       }
     },
-    "shared-ui-forms": {
+    "web-core-configuration-firebase": {
       "projectType": "library",
-      "root": "libs/shared/ui/forms",
-      "sourceRoot": "libs/shared/ui/forms/src",
+      "root": "libs/web/core/configuration-firebase",
+      "sourceRoot": "libs/web/core/configuration-firebase/src",
       "prefix": "ngfire-showcase",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/ui/forms/src/**/*.ts",
-              "libs/shared/ui/forms/src/**/*.html"
+              "libs/web/core/configuration-firebase/src/**/*.ts",
+              "libs/web/core/configuration-firebase/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/ui/forms"],
+          "outputs": ["coverage/libs/web/core/configuration-firebase"],
           "options": {
-            "jestConfig": "libs/shared/ui/forms/jest.config.js",
+            "jestConfig": "libs/web/core/configuration-firebase/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "shared-data-access-firebase": {
+    "web-core-environments": {
       "projectType": "library",
-      "root": "libs/shared/data-access/firebase",
-      "sourceRoot": "libs/shared/data-access/firebase/src",
+      "root": "libs/web/core/environments",
+      "sourceRoot": "libs/web/core/environments/src",
       "prefix": "ngfire-showcase",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/data-access/firebase/src/**/*.ts",
-              "libs/shared/data-access/firebase/src/**/*.html"
+              "libs/web/core/environments/src/**/*.ts",
+              "libs/web/core/environments/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/data-access/firebase"],
+          "outputs": ["coverage/libs/web/core/environments"],
           "options": {
-            "jestConfig": "libs/shared/data-access/firebase/jest.config.js",
+            "jestConfig": "libs/web/core/environments/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "shared-environments": {
+    "web-ui-form": {
       "projectType": "library",
-      "root": "libs/shared/environments",
-      "sourceRoot": "libs/shared/environments/src",
+      "root": "libs/web/ui/form",
+      "sourceRoot": "libs/web/ui/form/src",
       "prefix": "ngfire-showcase",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/shared/environments/src/**/*.ts",
-              "libs/shared/environments/src/**/*.html"
+              "libs/web/ui/form/src/**/*.ts",
+              "libs/web/ui/form/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/environments"],
+          "outputs": ["coverage/libs/web/ui/form"],
           "options": {
-            "jestConfig": "libs/shared/environments/jest.config.js",
+            "jestConfig": "libs/web/ui/form/jest.config.js",
             "passWithNoTests": true
           }
         }

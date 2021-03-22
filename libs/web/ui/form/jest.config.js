@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'shared-ui-forms',
+  displayName: 'web-ui-form',
   preset: '../../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/shared/ui/forms',
+  coverageDirectory: '../../../../coverage/libs/web/ui/form',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

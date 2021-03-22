@@ -15,13 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ngfire-showcase/shared/ui/forms": ["libs/shared/ui/forms/src/index.ts"],
-      "@ngfire-showcase/shared/data-access/firebase": [
-        "libs/shared/data-access/firebase/src/index.ts"
+      "@ngfire-showcase/web/core/configuration-firebase": [
+        "libs/web/core/configuration-firebase/src/index.ts"
       ],
-      "@ngfire-showcase/shared/environments": [
-        "libs/shared/environments/src/index.ts"
-      ]
+      "@ngfire-showcase/web/core/environments": [
+        "libs/web/core/environments/src/index.ts"
+      ],
+      "@ngfire-showcase/web/ui/form": ["libs/web/ui/form/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

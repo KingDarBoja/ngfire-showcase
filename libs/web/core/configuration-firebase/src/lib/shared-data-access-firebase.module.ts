@@ -23,7 +23,7 @@ import {
 import firebase from 'firebase/app';
 
 // Environment Config
-import { environment } from '@ngfire-showcase/shared/environments';
+import { environment } from '@ngfire-showcase/web/core/environments';
 
 interface SharedDataAccessFirebaseConfig {
   firestoreSettings?: firebase.firestore.Settings;

@@ -20,7 +20,7 @@ import 'firebase/auth';
 import 'firebase/functions';
 
 // Environment Config
-import { environment } from '@ngfire-showcase/shared/environments';
+import { environment } from '@ngfire-showcase/web/core/environments';
 
 const app = firebase.initializeApp(environment.firebase);
 app.auth().useEmulator('http://localhost:9099');

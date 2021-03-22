@@ -30,14 +30,14 @@
       "tags": [],
       "implicitDependencies": ["coljobs"]
     },
-    "shared-ui-forms": {
-      "tags": ["scope:shared", "type:ui"]
-    },
-    "shared-data-access-firebase": {
+    "web-core-configuration-firebase": {
       "tags": ["scope:shared", "type:data-access"]
     },
-    "shared-environments": {
+    "web-core-environments": {
       "tags": ["scope:shared", "type:environments"]
+    },
+    "web-ui-form": {
+      "tags": ["scope:shared", "type:ui"]
     }
   }
 }
