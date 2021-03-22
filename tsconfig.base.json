@@ -27,7 +27,10 @@
         "libs/web/shell/feature/src/index.ts"
       ],
       "@ngfire-showcase/web/layout": ["libs/web/layout/src/index.ts"],
-      "@ngfire-showcase/web/ui/table": ["libs/web/ui/table/src/index.ts"]
+      "@ngfire-showcase/web/ui/table": ["libs/web/ui/table/src/index.ts"],
+      "@ngfire-showcase/company/data-access": [
+        "libs/company/data-access/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

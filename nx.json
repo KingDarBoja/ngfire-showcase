@@ -26,6 +26,7 @@
     "shared-util-sdk": { "tags": ["scope:shared", "type:util"] },
     "web-shell-feature": { "tags": ["scope:web", "type:feature"] },
     "web-layout": { "tags": ["scope:web", "type:layout"] },
-    "web-ui-table": { "tags": ["scope:web", "type:ui"] }
+    "web-ui-table": { "tags": ["scope:web", "type:ui"] },
+    "company-data-access": { "tags": ["scope:company", "type:data-access"] }
   }
 }
