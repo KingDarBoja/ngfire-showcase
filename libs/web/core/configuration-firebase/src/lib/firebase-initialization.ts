@@ -23,6 +23,8 @@ import 'firebase/functions';
 import { environment } from '@ngfire-showcase/web/core/environments';
 
 const app = firebase.initializeApp(environment.firebase);
-app.auth().useEmulator('http://localhost:9099');
-app.firestore().useEmulator('localhost', 8080);
-app.functions().useEmulator('localhost', 5001);
+if (environment.useEmulators) {
+  app.auth().useEmulator('http://localhost:9099');
+  app.firestore().useEmulator('localhost', 8080);
+  app.functions().useEmulator('localhost', 5001);
+}
