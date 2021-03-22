@@ -138,6 +138,8 @@ libs
 
 - In this example, `root`, `user`, `company` and `country` are grouping folders containing *`feature`* libraries related to that domain. these feature libraries implement smart UI (with access to data sources) for specific business use cases or pages in an application.
 
+In the specific case of `root` directory, it should be imported by the app root module `app.module.ts` which declares the root component and imports the `feature-shell` module which sets up routing, initializers, configuration, and other orchestration.
+
 - These grouping directories can contain domain-specific *`data-access`* libraries, which provides code for interacting with a back-end system, including state management.
 
 - Also can contain `ui` libraries, which are a collection of related presentational components. There are generally no services injected into these components (all of the data they need should come from Inputs). These are meant to be used by feature libraries.
