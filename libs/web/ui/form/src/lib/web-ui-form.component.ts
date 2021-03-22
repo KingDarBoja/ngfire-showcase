@@ -19,12 +19,12 @@ import {
     </form>
   `,
 })
-export class WebUiFormComponent implements OnInit {
+export class WebUiFormComponent<T extends Record<string, unknown>> implements OnInit {
   @Input() form: FormGroup = new FormGroup({});
   @Input() fields: FormlyFieldConfig[] = [];
-  @Input() model?: any = {};
+  @Input() model!: T;
   @Input() options: FormlyFormOptions = {};
-  @Output() submitForm = new EventEmitter();
+  @Output() submitForm = new EventEmitter<T>();
 
   constructor(private builder: FormlyFormBuilder) {}
 
