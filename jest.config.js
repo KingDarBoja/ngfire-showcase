@@ -7,5 +7,6 @@ module.exports = {
     '<rootDir>/libs/shared/util/sdk',
     '<rootDir>/libs/web/shell/feature',
     '<rootDir>/libs/web/layout',
+    '<rootDir>/libs/web/ui/table',
   ],
 };

@@ -25,6 +25,7 @@
     "web-ui-form": { "tags": ["scope:shared", "type:ui"] },
     "shared-util-sdk": { "tags": ["scope:shared", "type:util"] },
     "web-shell-feature": { "tags": ["scope:web", "type:feature"] },
-    "web-layout": { "tags": ["scope:web", "type:layout"] }
+    "web-layout": { "tags": ["scope:web", "type:layout"] },
+    "web-ui-table": { "tags": ["scope:web", "type:ui"] }
   }
 }
