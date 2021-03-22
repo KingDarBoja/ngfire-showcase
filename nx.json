@@ -24,6 +24,7 @@
     "web-core-environments": { "tags": ["scope:shared", "type:environments"] },
     "web-ui-form": { "tags": ["scope:shared", "type:ui"] },
     "shared-util-sdk": { "tags": ["scope:shared", "type:util"] },
-    "web-shell-feature": { "tags": ["scope:web", "type:feature"] }
+    "web-shell-feature": { "tags": ["scope:web", "type:feature"] },
+    "web-layout": { "tags": ["scope:web", "type:layout"] }
   }
 }
