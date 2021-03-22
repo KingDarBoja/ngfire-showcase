@@ -200,6 +200,31 @@
           }
         }
       }
+    },
+    "shared-util-sdk": {
+      "projectType": "library",
+      "root": "libs/shared/util/sdk",
+      "sourceRoot": "libs/shared/util/sdk/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/util/sdk/src/**/*.ts",
+              "libs/shared/util/sdk/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/util/sdk"],
+          "options": {
+            "jestConfig": "libs/shared/util/sdk/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
@@ -218,11 +243,15 @@
       }
     },
     "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress",
       "strict": true
     },
     "@nrwl/angular:library": {
+      "style": "css",
+      "linter": "eslint",
       "unitTestRunner": "jest"
     },
     "@nrwl/angular:component": {

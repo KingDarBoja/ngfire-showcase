@@ -21,7 +21,8 @@
       "@ngfire-showcase/web/core/environments": [
         "libs/web/core/environments/src/index.ts"
       ],
-      "@ngfire-showcase/web/ui/form": ["libs/web/ui/form/src/index.ts"]
+      "@ngfire-showcase/web/ui/form": ["libs/web/ui/form/src/index.ts"],
+      "@ngfire-showcase/shared/util/sdk": ["libs/shared/util/sdk/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

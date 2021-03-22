@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/shared/ui/forms',
     '<rootDir>/libs/shared/data-access/firebase',
     '<rootDir>/libs/shared/environments',
+    '<rootDir>/libs/shared/util/sdk',
   ],
 };

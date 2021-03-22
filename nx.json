@@ -1,14 +1,9 @@
 {
   "npmScope": "ngfire-showcase",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
@@ -17,27 +12,17 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "coljobs": {
-      "tags": []
-    },
-    "coljobs-e2e": {
-      "tags": [],
-      "implicitDependencies": ["coljobs"]
-    },
+    "coljobs": { "tags": [] },
+    "coljobs-e2e": { "tags": [], "implicitDependencies": ["coljobs"] },
     "web-core-configuration-firebase": {
       "tags": ["scope:shared", "type:data-access"]
     },
-    "web-core-environments": {
-      "tags": ["scope:shared", "type:environments"]
-    },
-    "web-ui-form": {
-      "tags": ["scope:shared", "type:ui"]
-    }
+    "web-core-environments": { "tags": ["scope:shared", "type:environments"] },
+    "web-ui-form": { "tags": ["scope:shared", "type:ui"] },
+    "shared-util-sdk": { "tags": ["scope:shared", "type:util"] }
   }
 }
