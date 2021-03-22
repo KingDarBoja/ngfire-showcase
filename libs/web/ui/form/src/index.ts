@@ -1,2 +1,2 @@
-export * from './lib/shared-ui-forms.module';
-export * from './lib/utils';
+export * from './lib/web-ui-form.module';
+export * from './lib/web-ui-form.field';

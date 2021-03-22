@@ -1,6 +1,6 @@
 import { FormlyFieldConfig, FormlyTemplateOptions } from '@ngx-formly/core';
 
-export class FormField implements FormlyFieldConfig {
+export class WebUiFormField implements FormlyFieldConfig {
   static checkbox<T>(
     key: Extract<keyof T, string>,
     templateOptions?: FormlyTemplateOptions,

@@ -5,5 +5,6 @@ module.exports = {
     '<rootDir>/libs/shared/data-access/firebase',
     '<rootDir>/libs/shared/environments',
     '<rootDir>/libs/shared/util/sdk',
+    '<rootDir>/libs/web/shell/feature',
   ],
 };

@@ -19,7 +19,7 @@ import {
     </form>
   `,
 })
-export class FormComponent implements OnInit {
+export class WebUiFormComponent implements OnInit {
   @Input() form: FormGroup = new FormGroup({});
   @Input() fields: FormlyFieldConfig[] = [];
   @Input() model?: any = {};

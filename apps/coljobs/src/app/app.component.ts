@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { FormField } from '@ngfire-showcase/web/ui/form';
+import { WebUiFormField } from '@ngfire-showcase/web/ui/form';
 
 type UserAuth = {
   email: string;
@@ -19,8 +19,8 @@ export class AppComponent {
     password: '',
   };
   form = new FormGroup({});
-  fields: FormField[] = [
-    FormField.email<UserAuth>('email', {
+  fields: WebUiFormField[] = [
+    WebUiFormField.email<UserAuth>('email', {
       addonLeft: { icon: 'at' },
       required: true,
     }),
