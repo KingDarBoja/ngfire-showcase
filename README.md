@@ -96,3 +96,56 @@ Nx Cloud pairs with Nx in order to enable you to build and test code more rapidl
 Teams using Nx gain the advantage of building full-stack applications with their preferred framework alongside Nx’s advanced code generation and project dependency graph, plus a unified experience for both frontend and backend developers.
 
 Visit [Nx Cloud](https://nx.app/) to learn more.
+
+## Libraries Decision Process
+
+For any new feature that belongs to a section (domain), create a grouping folder to contains those feature libraries.
+
+```yml
+apps
+  - client-app
+    - (...)
+    - user-section
+      - // The user feature-shell goes here.
+  - server-app // NestJS example
+    - user
+      - user.controller.ts // imported `user.model` to share interfaces between server and client.
+      - user.module.ts
+libs
+  - root
+    - feature-shell
+  - user
+    - data-access
+      - src/lib/user-http.service.ts
+    - domain
+      - src/lib/user-specific.model.ts
+    - feature-page
+    - feature-billing
+    - feature-profile
+    - ui-profile
+    - util-profile
+  - company
+    - feature-page
+    - feature-list
+    - feature-search
+  - country
+    - (...)
+  - shared
+    - ui
+    - domain-user
+      - user.model.ts
+```
+
+- In this example, `root`, `user`, `company` and `country` are grouping folders containing *`feature`* libraries related to that domain. these feature libraries implement smart UI (with access to data sources) for specific business use cases or pages in an application.
+
+- These grouping directories can contain domain-specific *`data-access`* libraries, which provides code for interacting with a back-end system, including state management.
+
+- Also can contain `ui` libraries, which are a collection of related presentational components. There are generally no services injected into these components (all of the data they need should come from Inputs). These are meant to be used by feature libraries.
+
+- The *`domain`* / *`types`* specific libraries should contain code that should only be imported in other libraries under the grouping folder (i.e `user-specific.model.ts`) like as `util-profile`, `feature-profile`, and `ui-profile`. To enforce this, use the `scope:domain` tag along with ESLint `@nrwl/nx/enforce-module-boundaries` rule setting.
+
+A good example would be a `ProfileContainerComponent` in `feature-profile` using ProfileComponent (presentational component) from `ui-profile`. Both might depend on `user-specific.model.ts`, so both allowed to access.
+
+- Anything **shared** between multiple domains, not only libs but apps, should belong to `shared` grouping folder. Note that even an entire domain can be shared, for example between client-side apps. 
+
+If a file needs to be used in other domains or apps (i.e `user.model.ts`) to allow interfacing between `data-access` and `feature` / `ui` libraries, it should be in a shared library as `domain-user` under the `shared` grouping folder.
