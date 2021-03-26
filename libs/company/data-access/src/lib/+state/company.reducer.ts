@@ -7,7 +7,7 @@ import { CompanyEntity } from './company.models';
 export const COMPANY_FEATURE_KEY = 'company';
 
 export interface State extends EntityState<CompanyEntity> {
-  selectedId?: string | number; // which Company record has been selected
+  selectedId?: string; // which Company record has been selected
   loaded: boolean; // has the Company list been loaded
   error?: string | null; // last known error (if any)
 }

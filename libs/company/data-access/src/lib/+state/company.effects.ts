@@ -10,16 +10,16 @@ export class CompanyEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(CompanyActions.init),
-      // fetch({
-      //   run: (action) => {
-      //     // Your custom service 'load' logic goes here. For now just return a success action...
-      //     return CompanyActions.loadCompanySuccess({ company: [] });
-      //   },
-      //   onError: (action, error) => {
-      //     console.error('Error', error);
-      //     return CompanyActions.loadCompanyFailure({ error });
-      //   },
-      // })
+      fetch({
+        run: (action) => {
+          // Your custom service 'load' logic goes here. For now just return a success action...
+          return CompanyActions.loadCompanySuccess({ company: [] });
+        },
+        onError: (action, error) => {
+          console.error('Error', error);
+          return CompanyActions.loadCompanyFailure({ error });
+        },
+      })
     )
   );
 

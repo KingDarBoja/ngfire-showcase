@@ -16,7 +16,7 @@ export class CompanyFacade {
   allCompany$ = this.store.pipe(select(CompanySelectors.getAllCompany));
   selectedCompany$ = this.store.pipe(select(CompanySelectors.getSelected));
 
-  constructor(private store: Store) {}
+  constructor(private store: Store<CompanyFeature.CompanyPartialState>) {}
 
   /**
    * Use the initialization action to perform one
