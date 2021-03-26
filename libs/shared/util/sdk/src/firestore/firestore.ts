@@ -10,16 +10,21 @@ import {
   SnapshotOptions,
 } from '@angular/fire/firestore';
 import { from, Observable, of } from 'rxjs';
-import { map, mapTo, tap, timeoutWith } from 'rxjs/operators';
+import { map, mapTo, tap } from 'rxjs/operators';
 import { environment } from '@ngfire-showcase/web/core/environments';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
+interface FirestoreIdentifier {
+  id: string;
+}
+type FirestoreDocument<T> = T & FirestoreIdentifier;
+
 interface FirestoreBaseService<T> {
-  doc$(id: string): Observable<T>; // Read: Get
-  collection$(): Observable<T[]>; // Read: List
+  doc$(id: string): Observable<FirestoreDocument<T> | undefined>;   // Read: Get
+  collection$(): Observable<FirestoreDocument<T>[]>;                // Read: List
   create$(value: T): Observable<string>;
-  upsert$(value: Partial<T>, setOptions?: SetOptions): Observable<string>
+  upsert$(value: Partial<T>, setOptions?: SetOptions): Observable<string>;
   update$(id: string, value: Partial<T>, setOptions?: SetOptions): Observable<string>;
   delete$(id: string): Observable<void>;
 }
@@ -35,9 +40,8 @@ interface FirestoreBaseService<T> {
  * - https://indepth.dev/posts/1322/firebase-ngxs-the-perfect-couple
  */
 @Injectable()
-export abstract class FirestoreService<T> implements FirestoreBaseService<T> {
+export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>> implements FirestoreBaseService<T> {
   protected abstract basePath: string;
-  protected idField = 'id';
   // TODO: Not used atm
   protected converter: firebase.firestore.FirestoreDataConverter<T> = {
     toFirestore: (modelObject: T): DocumentData => {
@@ -84,7 +88,7 @@ export abstract class FirestoreService<T> implements FirestoreBaseService<T> {
   collection$(queryFn?: QueryFn) {
     return this.afs
       .collection<T>(this.basePath, (ref) => {
-        return queryFn(ref);
+        return queryFn ? queryFn(ref) : ref;
         // return queryFn(ref.withConverter(this.converter));
       })
       .snapshotChanges()
@@ -142,23 +146,24 @@ export abstract class FirestoreService<T> implements FirestoreBaseService<T> {
     let id: string;
     let newValue: Partial<T>;
 
-    if (Object.keys(value).includes(this.idField) && !!value[this.idField]) {
-      id = value[this.idField];
+    const idField = value.id ?? '';
+    if (idField) {
+      id = idField;
       newValue = Object.assign({}, value);
     } else {
       id = this.createId();
-      newValue = Object.assign({}, value, { [this.idField]: id });
+      newValue = Object.assign({}, value, { id: id });
     }
 
     return this.docSet(id, newValue as T, setOptions);
   }
 
-  private getDataWithId<TData>(
-    doc: QueryDocumentSnapshot<TData>
-  ): TData & { [idField: string]: string } {
-    const data: TData = doc.data();
-    const id: string = (data && data[this.idField]) || doc.id;
-    return { ...data, [this.idField]: id };
+  private getDataWithId(
+    doc: QueryDocumentSnapshot<T>
+  ): FirestoreDocument<T> {
+    const data: T = doc.data();
+    const id = data.id || doc.id;
+    return { ...data, id: id };
   }
 
   private doc(id: string): AngularFirestoreDocument<T> {
