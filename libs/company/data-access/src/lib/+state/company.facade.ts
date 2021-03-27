@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 
-import { select, Store, Action } from '@ngrx/store';
-import { CompanyFirestoreService } from '../company-firestore.service';
+import { select, Store } from '@ngrx/store';
+import { EMPTY } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
 
 import * as CompanyActions from './company.actions';
 import * as CompanyFeature from './company.reducer';
 import * as CompanySelectors from './company.selectors';
+import { CompanyFirestoreService } from '../company-firestore.service';
 
 @Injectable()
 export class CompanyFacade {
@@ -33,6 +35,13 @@ export class CompanyFacade {
   getCompanies() {
     this.companyFS
       .collection$()
-      .subscribe((company) => CompanyActions.loadCompanySuccess({ company }));
+      .pipe(
+        map(companies => this.store.dispatch(CompanyActions.loadCompanySuccess({ companies }))),
+        catchError(error => {
+          this.store.dispatch(CompanyActions.loadCompanyFailure({ error }));
+          return EMPTY;
+        }),
+      )
+      .subscribe();
   }
 }

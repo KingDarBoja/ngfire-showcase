@@ -30,8 +30,8 @@ const companyReducer = createReducer(
     loaded: false,
     error: null,
   })),
-  on(CompanyActions.loadCompanySuccess, (state, { company }) =>
-    companyAdapter.setAll(company, { ...state, loaded: true })
+  on(CompanyActions.loadCompanySuccess, (state, { companies }) =>
+    companyAdapter.setAll(companies, { ...state, loaded: true })
   ),
   on(CompanyActions.loadCompanyFailure, (state, { error }) => ({
     ...state,

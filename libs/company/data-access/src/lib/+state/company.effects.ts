@@ -13,7 +13,7 @@ export class CompanyEffects {
       fetch({
         run: (action) => {
           // Your custom service 'load' logic goes here. For now just return a success action...
-          return CompanyActions.loadCompanySuccess({ company: [] });
+          return CompanyActions.loadCompanySuccess({ companies: [] });
         },
         onError: (action, error) => {
           console.error('Error', error);
