@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { StoreModule } from '@ngrx/store';
 
 import { SharedDataAccessFirebaseModule } from '@ngfire-showcase/web/core/configuration-firebase';
 import { WebLayoutComponent } from '@ngfire-showcase/web/layout';
+import { EffectsModule } from '@ngrx/effects';
 
 const routes: Routes = [
   {
@@ -30,6 +32,8 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forRoot(routes),
     SharedDataAccessFirebaseModule.forRoot(),
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
   ],
 })
 export class WebShellFeatureModule {}
