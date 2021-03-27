@@ -9,5 +9,6 @@ module.exports = {
     '<rootDir>/libs/web/layout',
     '<rootDir>/libs/web/ui/table',
     '<rootDir>/libs/company/data-access',
+    '<rootDir>/libs/company/feature-list',
   ],
 };

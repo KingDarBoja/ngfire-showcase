@@ -12,9 +12,10 @@ const routes: Routes = [
     children: [
       // Application routes here
       { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
-      // {
-      //   path: 'dashboard',
-      // },
+      {
+        path: 'company',
+        loadChildren: () => import('@ngfire-showcase/company/feature-list').then((m) => m.CompanyFeatureListModule),
+      },
       {
         path: 'not-found',
         loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule),

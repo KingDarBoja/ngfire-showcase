@@ -325,6 +325,31 @@
           }
         }
       }
+    },
+    "company-feature-list": {
+      "projectType": "library",
+      "root": "libs/company/feature-list",
+      "sourceRoot": "libs/company/feature-list/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/company/feature-list/src/**/*.ts",
+              "libs/company/feature-list/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/company/feature-list"],
+          "options": {
+            "jestConfig": "libs/company/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

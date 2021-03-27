@@ -27,6 +27,7 @@
     "web-shell-feature": { "tags": ["scope:web", "type:feature"] },
     "web-layout": { "tags": ["scope:web", "type:layout"] },
     "web-ui-table": { "tags": ["scope:web", "type:ui"] },
-    "company-data-access": { "tags": ["scope:company", "type:data-access"] }
+    "company-data-access": { "tags": ["scope:company", "type:data-access"] },
+    "company-feature-list": { "tags": ["scope:web", "type:feature"] }
   }
 }

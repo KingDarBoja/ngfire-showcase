@@ -30,6 +30,9 @@
       "@ngfire-showcase/web/ui/table": ["libs/web/ui/table/src/index.ts"],
       "@ngfire-showcase/company/data-access": [
         "libs/company/data-access/src/index.ts"
+      ],
+      "@ngfire-showcase/company/feature-list": [
+        "libs/company/feature-list/src/index.ts"
       ]
     }
   },
