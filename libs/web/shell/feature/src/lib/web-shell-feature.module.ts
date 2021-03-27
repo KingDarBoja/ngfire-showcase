@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { SharedDataAccessFirebaseModule } from '@ngfire-showcase/web/core/configuration-firebase';
 import { WebLayoutComponent } from '@ngfire-showcase/web/layout';
@@ -34,6 +35,8 @@ const routes: Routes = [
     SharedDataAccessFirebaseModule.forRoot(),
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
+    // Instrumentation must be imported after importing StoreModule (config is optional)
+    StoreDevtoolsModule.instrument({}),
   ],
 })
 export class WebShellFeatureModule {}
