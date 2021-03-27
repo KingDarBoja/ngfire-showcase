@@ -3,7 +3,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { WebUiTableColumn } from './web-ui-table.interfaces';
 
 @Component({
-  selector: 'ngfire-showcase',
+  selector: 'ngfire-showcase-table',
   template: `
     <mat-table [dataSource]="dataSource">
       <ng-container *ngFor="let col of cols" [matColumnDef]="col.id">
@@ -22,7 +22,7 @@ import { WebUiTableColumn } from './web-ui-table.interfaces';
 export class WebUiTableComponent<T = unknown> {
   /** Raw columns definition */
   @Input() cols: WebUiTableColumn<T>[] = [];
-  @Input() data!: T[];
+  @Input() data: T[] = [];
 
   get dataSource(): MatTableDataSource<T> {
     return new MatTableDataSource(this.data || []);

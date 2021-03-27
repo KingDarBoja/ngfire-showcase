@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CompanyListComponent } from './company-list/company-list.component';
 import { CompanyDataAccessModule } from '@ngfire-showcase/company/data-access';
+import { WebUiTableModule } from '@ngfire-showcase/web/ui/table';
 
 const routes: Routes = [
   {
@@ -18,6 +19,7 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     CompanyDataAccessModule,
+    WebUiTableModule,
   ],
 })
 export class CompanyFeatureListModule {}

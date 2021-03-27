@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { fetch } from '@nrwl/angular';
+import { map } from 'rxjs/operators';
 
+import { CompanyFirestoreService } from '../company-firestore.service';
 import * as CompanyFeature from './company.reducer';
 import * as CompanyActions from './company.actions';
 
@@ -13,7 +15,7 @@ export class CompanyEffects {
       fetch({
         run: (action) => {
           // Your custom service 'load' logic goes here. For now just return a success action...
-          return CompanyActions.loadCompanySuccess({ companies: [] });
+          return this.companyFS.collection$().pipe(map(companies => CompanyActions.loadCompanySuccess({ companies })))
         },
         onError: (action, error) => {
           console.error('Error', error);
@@ -23,5 +25,5 @@ export class CompanyEffects {
     )
   );
 
-  constructor(private actions$: Actions) {}
+  constructor(private actions$: Actions, private companyFS: CompanyFirestoreService) {}
 }
