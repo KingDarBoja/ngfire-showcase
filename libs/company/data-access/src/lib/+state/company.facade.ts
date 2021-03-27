@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { select, Store, Action } from '@ngrx/store';
+import { CompanyFirestoreService } from '../company-firestore.service';
 
 import * as CompanyActions from './company.actions';
 import * as CompanyFeature from './company.reducer';
@@ -16,7 +17,10 @@ export class CompanyFacade {
   allCompany$ = this.store.pipe(select(CompanySelectors.getAllCompany));
   selectedCompany$ = this.store.pipe(select(CompanySelectors.getSelected));
 
-  constructor(private store: Store<CompanyFeature.CompanyPartialState>) {}
+  constructor(
+    private store: Store<CompanyFeature.CompanyPartialState>,
+    private companyFS: CompanyFirestoreService
+  ) {}
 
   /**
    * Use the initialization action to perform one
@@ -24,5 +28,11 @@ export class CompanyFacade {
    */
   init() {
     this.store.dispatch(CompanyActions.init());
+  }
+
+  getCompanies() {
+    this.companyFS
+      .collection$()
+      .subscribe((company) => CompanyActions.loadCompanySuccess({ company }));
   }
 }

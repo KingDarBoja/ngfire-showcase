@@ -10,5 +10,7 @@ export class CompanyListComponent {
   allCompany$ = this.companyFacade.allCompany$;
   selectedCompany$ = this.companyFacade.selectedCompany$;
 
-  constructor(private readonly companyFacade: CompanyFacade) {}
+  constructor(private readonly companyFacade: CompanyFacade) {
+    this.companyFacade.getCompanies();
+  }
 }

@@ -1,4 +1,6 @@
 <h2 class="text-lg font-bold text-purple-800">Company List</h2>
 <ul>
-  <li *ngFor="let company of allCompany$ | async">{{ company.id }}</li>
+  <li *ngFor="let company of allCompany$ | async; index as i">
+    {{ i + 1 }} | {{ company.id }} - {{ company.name }}
+  </li>
 </ul>
