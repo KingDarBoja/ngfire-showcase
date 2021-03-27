@@ -350,6 +350,31 @@
           }
         }
       }
+    },
+    "job-post-data-access": {
+      "projectType": "library",
+      "root": "libs/job-post/data-access",
+      "sourceRoot": "libs/job-post/data-access/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/job-post/data-access/src/**/*.ts",
+              "libs/job-post/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/job-post/data-access"],
+          "options": {
+            "jestConfig": "libs/job-post/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

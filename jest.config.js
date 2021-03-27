@@ -10,5 +10,6 @@ module.exports = {
     '<rootDir>/libs/web/ui/table',
     '<rootDir>/libs/company/data-access',
     '<rootDir>/libs/company/feature-list',
+    '<rootDir>/libs/job-post/data-access',
   ],
 };

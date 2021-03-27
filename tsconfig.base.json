@@ -33,6 +33,9 @@
       ],
       "@ngfire-showcase/company/feature-list": [
         "libs/company/feature-list/src/index.ts"
+      ],
+      "@ngfire-showcase/job-post/data-access": [
+        "libs/job-post/data-access/src/index.ts"
       ]
     }
   },
