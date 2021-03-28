@@ -22,10 +22,10 @@ import { WebUiTableColumn } from './web-ui-table.interfaces';
 export class WebUiTableComponent<T = unknown> {
   /** Raw columns definition */
   @Input() cols: WebUiTableColumn<T>[] = [];
-  @Input() data: T[] = [];
+  @Input() data: ReadonlyArray<T> = [];
 
   get dataSource(): MatTableDataSource<T> {
-    return new MatTableDataSource(this.data || []);
+    return new MatTableDataSource(this.data as T[]);
   }
 
   /** Get columns to be displayed. */

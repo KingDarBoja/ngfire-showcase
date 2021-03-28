@@ -1,0 +1,7 @@
+<h2 class="text-lg font-bold text-purple-800">Job Listing</h2>
+<ng-container *ngIf="getJobPost$ | async as jobPosts">
+  <ngfire-showcase-table
+    [data]="jobPosts"
+    [cols]="cols"
+  ></ngfire-showcase-table>
+</ng-container>

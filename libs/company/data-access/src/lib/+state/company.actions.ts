@@ -1,14 +1,10 @@
 import { createAction, props } from '@ngrx/store';
 import { CompanyEntity } from './company.models';
 
-export const init = createAction('[Company Page] Init');
-
-export const loadCompanySuccess = createAction(
-  '[Company/API] Load Companies Success',
-  props<{ companies: CompanyEntity[] }>()
+export const navigatedToCompanies = createAction(
+  '[Company Page] Navigate To Companies',
 );
-
-export const loadCompanyFailure = createAction(
-  '[Company/API] Load Companies Failure',
-  props<{ error: any }>()
+export const companiesChanged = createAction(
+  '[Company List] Companies Changed',
+  props<{ companies: ReadonlyArray<CompanyEntity> }>()
 );

@@ -11,5 +11,7 @@ module.exports = {
     '<rootDir>/libs/company/data-access',
     '<rootDir>/libs/company/feature-list',
     '<rootDir>/libs/job-post/data-access',
+    '<rootDir>/libs/job-post/feature-list',
+    '<rootDir>/libs/company/feature-detail',
   ],
 };

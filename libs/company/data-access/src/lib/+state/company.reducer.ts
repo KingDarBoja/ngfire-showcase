@@ -1,41 +1,28 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import { EntityState, EntityAdapter, createEntityAdapter } from '@ngrx/entity';
+import { companiesChanged } from './company.actions';
 
-import * as CompanyActions from './company.actions';
 import { CompanyEntity } from './company.models';
 
 export const COMPANY_FEATURE_KEY = 'company';
 
-export interface State extends EntityState<CompanyEntity> {
-  selectedId?: string; // which Company record has been selected
-  loaded: boolean; // has the Company list been loaded
-  error?: string | null; // last known error (if any)
+export interface State {
+  companies: ReadonlyArray<CompanyEntity>;
 }
 
 export interface CompanyPartialState {
   readonly [COMPANY_FEATURE_KEY]: State;
 }
 
-export const companyAdapter: EntityAdapter<CompanyEntity> = createEntityAdapter<CompanyEntity>();
-
-export const initialState: State = companyAdapter.getInitialState({
+export const initialState: State = {
   // set initial required properties
-  loaded: false,
-});
+  companies: [],
+};
 
 const companyReducer = createReducer(
   initialState,
-  on(CompanyActions.init, (state) => ({
+  on(companiesChanged, (state, { companies }) => ({
     ...state,
-    loaded: false,
-    error: null,
-  })),
-  on(CompanyActions.loadCompanySuccess, (state, { companies }) =>
-    companyAdapter.setAll(companies, { ...state, loaded: true })
-  ),
-  on(CompanyActions.loadCompanyFailure, (state, { error }) => ({
-    ...state,
-    error,
+    companies,
   }))
 );
 

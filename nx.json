@@ -29,6 +29,8 @@
     "web-ui-table": { "tags": ["scope:web", "type:ui"] },
     "company-data-access": { "tags": ["scope:company", "type:data-access"] },
     "company-feature-list": { "tags": ["scope:company", "type:feature"] },
-    "job-post-data-access": { "tags": ["scope:job-post", "type:data-access"] }
+    "job-post-data-access": { "tags": ["scope:job-post", "type:data-access"] },
+    "job-post-feature-list": { "tags": ["scope:job-post", "type:feature"] },
+    "company-feature-detail": { "tags": ["scope:company", "type:feature"] }
   }
 }

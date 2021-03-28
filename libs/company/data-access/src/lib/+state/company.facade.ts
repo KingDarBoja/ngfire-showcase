@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { select, Store } from '@ngrx/store';
-
-import * as CompanyActions from './company.actions';
-import * as CompanyFeature from './company.reducer';
-import * as CompanySelectors from './company.selectors';
+import { Store } from '@ngrx/store';
+import { CompanyPartialState } from './company.reducer';
+import { getAllCompanies } from './company.selectors';
 
 @Injectable()
 export class CompanyFacade {
@@ -12,17 +10,7 @@ export class CompanyFacade {
    * Combine pieces of state using createSelector,
    * and expose them as observables through the facade.
    */
-  loaded$ = this.store.pipe(select(CompanySelectors.getCompanyLoaded));
-  allCompany$ = this.store.pipe(select(CompanySelectors.getAllCompany));
-  selectedCompany$ = this.store.pipe(select(CompanySelectors.getSelected));
+   getAllCompanies$ = this.store.select(getAllCompanies);
 
-  constructor(private store: Store<CompanyFeature.CompanyPartialState>) {}
-
-  /**
-   * Use the initialization action to perform one
-   * or more tasks in your Effects.
-   */
-  init() {
-    this.store.dispatch(CompanyActions.init());
-  }
+  constructor(private store: Store<CompanyPartialState>) {}
 }

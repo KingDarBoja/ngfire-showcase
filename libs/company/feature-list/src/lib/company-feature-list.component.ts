@@ -6,13 +6,10 @@ import {
 import { WebUiTableColumn } from '@ngfire-showcase/web/ui/table';
 
 @Component({
-  selector: 'ngfire-showcase-company-list',
-  templateUrl: './company-list.component.html',
-  styleUrls: ['./company-list.component.scss'],
+  templateUrl: './company-feature-list.component.html',
 })
-export class CompanyListComponent {
-  allCompany$ = this.companyFacade.allCompany$;
-  selectedCompany$ = this.companyFacade.selectedCompany$;
+export class CompanyFeatureListComponent {
+  allCompanies$ = this.companyFacade.getAllCompanies$;
   cols: WebUiTableColumn<CompanyEntity>[] = [
     {
       id: 'id',
@@ -24,7 +21,5 @@ export class CompanyListComponent {
     },
   ];
 
-  constructor(private readonly companyFacade: CompanyFacade) {
-    this.companyFacade.init();
-  }
+  constructor(private readonly companyFacade: CompanyFacade) {}
 }

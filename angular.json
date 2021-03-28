@@ -375,6 +375,56 @@
           }
         }
       }
+    },
+    "job-post-feature-list": {
+      "projectType": "library",
+      "root": "libs/job-post/feature-list",
+      "sourceRoot": "libs/job-post/feature-list/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/job-post/feature-list/src/**/*.ts",
+              "libs/job-post/feature-list/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/job-post/feature-list"],
+          "options": {
+            "jestConfig": "libs/job-post/feature-list/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "company-feature-detail": {
+      "projectType": "library",
+      "root": "libs/company/feature-detail",
+      "sourceRoot": "libs/company/feature-detail/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/company/feature-detail/src/**/*.ts",
+              "libs/company/feature-detail/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/company/feature-detail"],
+          "options": {
+            "jestConfig": "libs/company/feature-detail/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

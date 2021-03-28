@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { CompanyDataAccessModule } from '@ngfire-showcase/company/data-access';
+import { JobPostDataAccessModule } from '@ngfire-showcase/job-post/data-access';
 import { WebUiTableModule } from '@ngfire-showcase/web/ui/table';
-import { CompanyFeatureListComponent } from './company-feature-list.component';
-import { JobPostFeatureListResolver } from './company-feature-list.resolver';
+import { JobPostFeatureListComponent } from './job-post-feature-list.component';
+import { JobPostFeatureListResolver } from './job-post-feature-list.resolver';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: CompanyFeatureListComponent,
+    component: JobPostFeatureListComponent,
     resolve: {
       data: JobPostFeatureListResolver,
     },
@@ -18,13 +18,13 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [CompanyFeatureListComponent],
+  declarations: [JobPostFeatureListComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    CompanyDataAccessModule,
+    JobPostDataAccessModule,
     WebUiTableModule,
   ],
   providers: [JobPostFeatureListResolver],
 })
-export class CompanyFeatureListModule {}
+export class JobPostFeatureListModule {}

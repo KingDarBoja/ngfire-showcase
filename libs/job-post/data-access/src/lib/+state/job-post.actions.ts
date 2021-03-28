@@ -1,14 +1,19 @@
 import { createAction, props } from '@ngrx/store';
-import { JobPostEntity } from './job-post.models';
+import { JobPostEntity, JobSearchParams } from './job-post.models';
 
-export const init = createAction('[JobPost Page] Init');
-
-export const loadJobPostSuccess = createAction(
-  '[JobPost/API] Load JobPost Success',
-  props<{ jobPosts: JobPostEntity[] }>()
+export const companyChanged = createAction(
+  '[JobPost List] Company Changed',
+  props<{ companyId?: string }>()
 );
-
-export const loadJobPostFailure = createAction(
-  '[JobPost/API] Load JobPost Failure',
-  props<{ error: any }>()
+export const countryChanged = createAction(
+  '[JobPost List] Country changed',
+  props<{ countryId?: string }>()
+);
+export const searchParamsChanged = createAction(
+  '[JobPost List] Search parameters changed',
+  props<{ searchParams?: JobSearchParams }>()
+);
+export const jobPostsChanged = createAction(
+  '[JobPost List] Posts changed',
+  props<{ jobPosts: ReadonlyArray<JobPostEntity> }>()
 );

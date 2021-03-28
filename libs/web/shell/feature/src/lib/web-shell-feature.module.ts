@@ -20,6 +20,10 @@ const routes: Routes = [
         loadChildren: () => import('@ngfire-showcase/company/feature-list').then((m) => m.CompanyFeatureListModule),
       },
       {
+        path: 'jobs',
+        loadChildren: () => import('@ngfire-showcase/job-post/feature-list').then((m) => m.JobPostFeatureListModule),
+      },
+      {
         path: 'not-found',
         loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule),
       },

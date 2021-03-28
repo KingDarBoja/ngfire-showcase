@@ -3,7 +3,6 @@ import {
   JOB_POST_FEATURE_KEY,
   State,
   JobPostPartialState,
-  jobPostAdapter,
 } from './job-post.reducer';
 
 // Lookup the 'JobPost' feature state managed by NgRx
@@ -12,34 +11,12 @@ export const getJobPostState = createFeatureSelector<
   State
 >(JOB_POST_FEATURE_KEY);
 
-const { selectAll, selectEntities } = jobPostAdapter.getSelectors();
-
-export const getJobPostLoaded = createSelector(
+export const getSearchParams = createSelector(
   getJobPostState,
-  (state: State) => state.loaded
+  (state: State) => state.searchParams
 );
 
-export const getJobPostError = createSelector(
+export const getJobPosts = createSelector(
   getJobPostState,
-  (state: State) => state.error
-);
-
-export const getAllJobPost = createSelector(getJobPostState, (state: State) =>
-  selectAll(state)
-);
-
-export const getJobPostEntities = createSelector(
-  getJobPostState,
-  (state: State) => selectEntities(state)
-);
-
-export const getSelectedId = createSelector(
-  getJobPostState,
-  (state: State) => state.selectedId
-);
-
-export const getSelected = createSelector(
-  getJobPostEntities,
-  getSelectedId,
-  (entities, selectedId) => selectedId && entities[selectedId]
+  (state: State) => state.jobPosts
 );
