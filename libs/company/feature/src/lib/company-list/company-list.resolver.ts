@@ -8,7 +8,7 @@ import {
 } from '@ngfire-showcase/company/data-access';
 
 @Injectable()
-export class JobPostFeatureListResolver implements Resolve<void> {
+export class CompanyListResolver implements Resolve<void> {
   constructor(private store: Store<CompanyPartialState>) {}
 
   resolve(): void {

@@ -3,28 +3,28 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { CompanyDataAccessModule } from '@ngfire-showcase/company/data-access';
 import { WebUiTableModule } from '@ngfire-showcase/web/ui/table';
-import { CompanyFeatureListComponent } from './company-feature-list.component';
-import { JobPostFeatureListResolver } from './company-feature-list.resolver';
+import { CompanyListResolver } from './company-list.resolver';
+import { CompanyListComponent } from './company-list.component';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: CompanyFeatureListComponent,
+    component: CompanyListComponent,
     resolve: {
-      data: JobPostFeatureListResolver,
+      data: CompanyListResolver,
     },
   },
 ];
 
 @NgModule({
-  declarations: [CompanyFeatureListComponent],
+  declarations: [CompanyListComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     CompanyDataAccessModule,
     WebUiTableModule,
   ],
-  providers: [JobPostFeatureListResolver],
+  providers: [CompanyListResolver],
 })
-export class CompanyFeatureListModule {}
+export class CompanyListModule {}

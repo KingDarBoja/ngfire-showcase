@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'company-feature-detail',
+  displayName: 'job-post-feature',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/company/feature-detail',
+  coverageDirectory: '../../../coverage/libs/job-post/feature',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

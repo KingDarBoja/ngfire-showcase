@@ -17,15 +17,22 @@ const routes: Routes = [
       { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
       {
         path: 'company',
-        loadChildren: () => import('@ngfire-showcase/company/feature-list').then((m) => m.CompanyFeatureListModule),
+        loadChildren: () =>
+          import('@ngfire-showcase/company/feature').then(
+            (m) => m.CompanyFeatureModule
+          ),
       },
       {
         path: 'jobs',
-        loadChildren: () => import('@ngfire-showcase/job-post/feature-list').then((m) => m.JobPostFeatureListModule),
+        loadChildren: () =>
+          import('@ngfire-showcase/job-post/feature').then(
+            (m) => m.JobPostFeatureModule
+          ),
       },
       {
         path: 'not-found',
-        loadChildren: () => import('./not-found/not-found.module').then((m) => m.NotFoundModule),
+        loadChildren: () =>
+          import('./not-found/not-found.module').then((m) => m.NotFoundModule),
       },
     ],
   },

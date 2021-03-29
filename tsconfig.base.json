@@ -31,17 +31,12 @@
       "@ngfire-showcase/company/data-access": [
         "libs/company/data-access/src/index.ts"
       ],
-      "@ngfire-showcase/company/feature-list": [
-        "libs/company/feature-list/src/index.ts"
-      ],
       "@ngfire-showcase/job-post/data-access": [
         "libs/job-post/data-access/src/index.ts"
       ],
-      "@ngfire-showcase/job-post/feature-list": [
-        "libs/job-post/feature-list/src/index.ts"
-      ],
-      "@ngfire-showcase/company/feature-detail": [
-        "libs/company/feature-detail/src/index.ts"
+      "@ngfire-showcase/company/feature": ["libs/company/feature/src/index.ts"],
+      "@ngfire-showcase/job-post/feature": [
+        "libs/job-post/feature/src/index.ts"
       ]
     }
   },

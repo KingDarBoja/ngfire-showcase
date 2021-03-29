@@ -3,28 +3,28 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { JobPostDataAccessModule } from '@ngfire-showcase/job-post/data-access';
 import { WebUiTableModule } from '@ngfire-showcase/web/ui/table';
-import { JobPostFeatureListComponent } from './job-post-feature-list.component';
-import { JobPostFeatureListResolver } from './job-post-feature-list.resolver';
+import { JobPostListComponent } from './job-post-list.component';
+import { JobPostListResolver } from './job-post-list.resolver';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: JobPostFeatureListComponent,
+    component: JobPostListComponent,
     resolve: {
-      data: JobPostFeatureListResolver,
+      data: JobPostListResolver,
     },
   },
 ];
 
 @NgModule({
-  declarations: [JobPostFeatureListComponent],
+  declarations: [JobPostListComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     JobPostDataAccessModule,
     WebUiTableModule,
   ],
-  providers: [JobPostFeatureListResolver],
+  providers: [JobPostListResolver],
 })
-export class JobPostFeatureListModule {}
+export class JobPostListModule {}

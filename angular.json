@@ -326,31 +326,6 @@
         }
       }
     },
-    "company-feature-list": {
-      "projectType": "library",
-      "root": "libs/company/feature-list",
-      "sourceRoot": "libs/company/feature-list/src",
-      "prefix": "ngfire-showcase",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/company/feature-list/src/**/*.ts",
-              "libs/company/feature-list/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/company/feature-list"],
-          "options": {
-            "jestConfig": "libs/company/feature-list/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "job-post-data-access": {
       "projectType": "library",
       "root": "libs/job-post/data-access",
@@ -376,51 +351,51 @@
         }
       }
     },
-    "job-post-feature-list": {
+    "company-feature": {
       "projectType": "library",
-      "root": "libs/job-post/feature-list",
-      "sourceRoot": "libs/job-post/feature-list/src",
+      "root": "libs/company/feature",
+      "sourceRoot": "libs/company/feature/src",
       "prefix": "ngfire-showcase",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/job-post/feature-list/src/**/*.ts",
-              "libs/job-post/feature-list/src/**/*.html"
+              "libs/company/feature/src/**/*.ts",
+              "libs/company/feature/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/job-post/feature-list"],
+          "outputs": ["coverage/libs/company/feature"],
           "options": {
-            "jestConfig": "libs/job-post/feature-list/jest.config.js",
+            "jestConfig": "libs/company/feature/jest.config.js",
             "passWithNoTests": true
           }
         }
       }
     },
-    "company-feature-detail": {
+    "job-post-feature": {
       "projectType": "library",
-      "root": "libs/company/feature-detail",
-      "sourceRoot": "libs/company/feature-detail/src",
+      "root": "libs/job-post/feature",
+      "sourceRoot": "libs/job-post/feature/src",
       "prefix": "ngfire-showcase",
       "architect": {
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": [
-              "libs/company/feature-detail/src/**/*.ts",
-              "libs/company/feature-detail/src/**/*.html"
+              "libs/job-post/feature/src/**/*.ts",
+              "libs/job-post/feature/src/**/*.html"
             ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/company/feature-detail"],
+          "outputs": ["coverage/libs/job-post/feature"],
           "options": {
-            "jestConfig": "libs/company/feature-detail/jest.config.js",
+            "jestConfig": "libs/job-post/feature/jest.config.js",
             "passWithNoTests": true
           }
         }

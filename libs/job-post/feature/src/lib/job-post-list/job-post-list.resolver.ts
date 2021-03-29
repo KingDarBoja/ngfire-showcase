@@ -8,7 +8,7 @@ import {
 } from '@ngfire-showcase/job-post/data-access';
 
 @Injectable()
-export class JobPostFeatureListResolver implements Resolve<void> {
+export class JobPostListResolver implements Resolve<void> {
   constructor(private store: Store<JobPostPartialState>) {}
 
   resolve({ queryParamMap }: ActivatedRouteSnapshot): void {

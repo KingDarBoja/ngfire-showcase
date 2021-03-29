@@ -1,5 +1,5 @@
 module.exports = {
-  displayName: 'company-feature-list',
+  displayName: 'company-feature',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../coverage/libs/company/feature-list',
+  coverageDirectory: '../../../coverage/libs/company/feature',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

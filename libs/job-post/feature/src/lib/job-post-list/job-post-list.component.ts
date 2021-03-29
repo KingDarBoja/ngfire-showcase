@@ -6,9 +6,9 @@ import {
 import { WebUiTableColumn } from '@ngfire-showcase/web/ui/table';
 
 @Component({
-  templateUrl: 'job-post-feature-list.component.html',
+  templateUrl: 'job-post-list.component.html',
 })
-export class JobPostFeatureListComponent {
+export class JobPostListComponent {
   getJobPost$ = this.jobPostFacade.getJobPost$;
   cols: WebUiTableColumn<JobPostEntity>[] = [
     {
