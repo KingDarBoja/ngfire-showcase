@@ -16,6 +16,11 @@ const routes: Routes = [
       // Application routes here
       { path: '', pathMatch: 'full', redirectTo: 'dashboard' },
       {
+        path: 'dashboard',
+        loadChildren: () =>
+          import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+      },
+      {
         path: 'company',
         loadChildren: () =>
           import('@ngfire-showcase/company/feature').then(
