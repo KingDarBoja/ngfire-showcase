@@ -93,6 +93,7 @@
     "open": "^7.0.3",
     "postcss": "8.2.4",
     "prettier": "2.2.1",
+    "source-map-explorer": "^2.5.2",
     "tailwindcss": "2.0.2",
     "ts-jest": "26.4.0",
     "ts-node": "~9.1.1",

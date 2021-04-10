@@ -71,6 +71,20 @@
             }
           }
         },
+        "analyze": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "nx run coljobs:build --prod --named-chunks --source-map",
+                "forwardAllArgs": false
+              },
+              {
+                "command": "source-map-explorer --html result.html"
+              }
+            ]
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
