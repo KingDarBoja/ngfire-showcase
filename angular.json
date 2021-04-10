@@ -74,13 +74,14 @@
         "analyze": {
           "builder": "@nrwl/workspace:run-commands",
           "options": {
+            "parallel": false,
             "commands": [
               {
                 "command": "nx run coljobs:build --prod --named-chunks --source-map",
                 "forwardAllArgs": false
               },
               {
-                "command": "source-map-explorer --html result.html"
+                "command": "source-map-explorer './dist/apps/coljobs/*.js' --html tmp/result.html"
               }
             ]
           }
