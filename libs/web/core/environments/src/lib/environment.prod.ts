@@ -1,5 +1,8 @@
-export const environment = {
+import { EnvironmentConfig } from './environment.config';
+
+export const environment: EnvironmentConfig = {
   production: true,
+  useEmulators: false,
   firebase: {
     apiKey: 'AIzaSyBXb3nviCyhTpwBPP214LVacQ6ogs3fLWg',
     authDomain: 'coljobs-6f319.firebaseapp.com',
