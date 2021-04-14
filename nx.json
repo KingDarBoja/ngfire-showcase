@@ -31,10 +31,10 @@
       "implicitDependencies": ["coljobs"]
     },
     "web-core-configuration-firebase": {
-      "tags": ["scope:shared", "type:data-access"]
+      "tags": ["scope:shared", "type:config"]
     },
     "web-core-environments": {
-      "tags": ["scope:shared", "type:environments"]
+      "tags": ["scope:shared", "type:config"]
     },
     "web-ui-form": {
       "tags": ["scope:shared", "type:ui"]

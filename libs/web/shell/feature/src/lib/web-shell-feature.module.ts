@@ -7,6 +7,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { SharedDataAccessFirebaseModule } from '@ngfire-showcase/web/core/configuration-firebase';
 import { WebLayoutComponent } from '@ngfire-showcase/web/layout';
 import { EffectsModule } from '@ngrx/effects';
+import { environment } from '@ngfire-showcase/web/core/environments';
 
 const routes: Routes = [
   {
@@ -48,7 +49,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forRoot(routes),
-    SharedDataAccessFirebaseModule.forRoot(),
+    SharedDataAccessFirebaseModule.forRoot({
+      firebaseConfig: environment.firebase,
+    }),
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     // Instrumentation must be imported after importing StoreModule (config is optional)

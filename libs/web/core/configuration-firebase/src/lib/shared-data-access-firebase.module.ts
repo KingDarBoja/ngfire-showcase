@@ -1,5 +1,5 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { AngularFireModule } from '@angular/fire';
+import { AngularFireModule, FIREBASE_OPTIONS } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import {
   AngularFireAuthModule,
@@ -20,20 +20,20 @@ import {
 } from '@angular/fire/firestore';
 
 // Firebase Config
+import type { FirebaseOptions } from '@firebase/app-types';
 import firebase from 'firebase/app';
 
-// Environment Config
-import { environment } from '@ngfire-showcase/web/core/environments';
-
 interface SharedDataAccessFirebaseConfig {
+  firebaseConfig: FirebaseOptions;
   firestoreSettings?: firebase.firestore.Settings;
   firestoreEnablePersistence?: boolean;
   firestorePersistenceSettings?: firebase.firestore.PersistenceSettings;
+  useEmulators?: boolean;
 }
 
 @NgModule({
   imports: [
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule,
     AngularFireAuthModule,
     AngularFireFunctionsModule,
     AngularFireMessagingModule,
@@ -41,42 +41,44 @@ interface SharedDataAccessFirebaseConfig {
     AngularFireStorageModule,
     AngularFireAnalyticsModule,
   ],
-  providers: [
-    {
-      provide: USE_AUTH_EMULATOR,
-      useValue: environment.useEmulators ? ['localhost', 9099] : undefined,
-    },
-    {
-      provide: USE_FIRESTORE_EMULATOR,
-      useValue: environment.useEmulators ? ['localhost', 8080] : undefined,
-    },
-    {
-      provide: USE_FUNCTIONS_EMULATOR,
-      useValue: environment.useEmulators ? ['localhost', 5001] : undefined,
-    },
-  ],
 })
 export class SharedDataAccessRootFirebaseModule {}
 
 @NgModule({})
 export class SharedDataAccessFirebaseModule {
   static forRoot(
-    config?: SharedDataAccessFirebaseConfig
+    config: SharedDataAccessFirebaseConfig
   ): ModuleWithProviders<SharedDataAccessRootFirebaseModule> {
     return {
       ngModule: SharedDataAccessRootFirebaseModule,
       providers: [
         {
+          provide: FIREBASE_OPTIONS,
+          useValue: config.firebaseConfig,
+        },
+        {
           provide: FIRESTORE_SETTINGS,
-          useValue: config?.firestoreSettings,
+          useValue: config.firestoreSettings,
         },
         {
           provide: ENABLE_PERSISTENCE,
-          useValue: config?.firestoreEnablePersistence,
+          useValue: config.firestoreEnablePersistence ?? false,
         },
         {
           provide: PERSISTENCE_SETTINGS,
-          useValue: config?.firestorePersistenceSettings,
+          useValue: config.firestorePersistenceSettings,
+        },
+        {
+          provide: USE_AUTH_EMULATOR,
+          useValue: config.useEmulators ? ['localhost', 9099] : undefined,
+        },
+        {
+          provide: USE_FIRESTORE_EMULATOR,
+          useValue: config.useEmulators ? ['localhost', 8080] : undefined,
+        },
+        {
+          provide: USE_FUNCTIONS_EMULATOR,
+          useValue: config.useEmulators ? ['localhost', 5001] : undefined,
         },
       ],
     };
