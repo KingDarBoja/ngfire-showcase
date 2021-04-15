@@ -15,12 +15,6 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@ngfire-showcase/web/core/configuration-firebase": [
-        "libs/web/core/configuration-firebase/src/index.ts"
-      ],
-      "@ngfire-showcase/web/core/environments": [
-        "libs/web/core/environments/src/index.ts"
-      ],
       "@ngfire-showcase/web/ui/form": ["libs/web/ui/form/src/index.ts"],
       "@ngfire-showcase/shared/util/sdk": ["libs/shared/util/sdk/src/index.ts"],
       "@ngfire-showcase/web/shell/feature": [
@@ -40,6 +34,12 @@
       ],
       "@ngfire-showcase/shared/config-transloco": [
         "libs/shared/config-transloco/src/index.ts"
+      ],
+      "@ngfire-showcase/shared/config-firebase": [
+        "libs/shared/config-firebase/src/index.ts"
+      ],
+      "@ngfire-showcase/shared/config-environments": [
+        "libs/shared/config-environments/src/index.ts"
       ]
     }
   },

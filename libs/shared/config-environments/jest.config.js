@@ -1,6 +1,6 @@
 module.exports = {
-  displayName: 'web-core-environments',
-  preset: '../../../../jest.preset.js',
+  displayName: 'shared-config-environments',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -14,7 +14,7 @@ module.exports = {
       },
     },
   },
-  coverageDirectory: '../../../../coverage/libs/web/core/environments',
+  coverageDirectory: '../../../coverage/libs/shared/config-environments',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

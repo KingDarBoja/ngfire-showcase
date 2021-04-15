@@ -4,10 +4,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
-import { SharedDataAccessFirebaseModule } from '@ngfire-showcase/web/core/configuration-firebase';
+import { SharedDataAccessFirebaseModule } from '@ngfire-showcase/shared/config-firebase';
 import { WebLayoutComponent } from '@ngfire-showcase/web/layout';
 import { EffectsModule } from '@ngrx/effects';
-import { environment } from '@ngfire-showcase/web/core/environments';
+import { environment } from '@ngfire-showcase/shared/config-environments';
 
 const routes: Routes = [
   {

@@ -141,56 +141,6 @@
         }
       }
     },
-    "web-core-configuration-firebase": {
-      "projectType": "library",
-      "root": "libs/web/core/configuration-firebase",
-      "sourceRoot": "libs/web/core/configuration-firebase/src",
-      "prefix": "ngfire-showcase",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/web/core/configuration-firebase/src/**/*.ts",
-              "libs/web/core/configuration-firebase/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/core/configuration-firebase"],
-          "options": {
-            "jestConfig": "libs/web/core/configuration-firebase/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
-    "web-core-environments": {
-      "projectType": "library",
-      "root": "libs/web/core/environments",
-      "sourceRoot": "libs/web/core/environments/src",
-      "prefix": "ngfire-showcase",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/web/core/environments/src/**/*.ts",
-              "libs/web/core/environments/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/core/environments"],
-          "options": {
-            "jestConfig": "libs/web/core/environments/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "web-ui-form": {
       "projectType": "library",
       "root": "libs/web/ui/form",
@@ -436,6 +386,56 @@
           "outputs": ["coverage/libs/shared/config-transloco"],
           "options": {
             "jestConfig": "libs/shared/config-transloco/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-config-firebase": {
+      "projectType": "library",
+      "root": "libs/shared/config-firebase",
+      "sourceRoot": "libs/shared/config-firebase/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/config-firebase/src/**/*.ts",
+              "libs/shared/config-firebase/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/config-firebase"],
+          "options": {
+            "jestConfig": "libs/shared/config-firebase/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "shared-config-environments": {
+      "projectType": "library",
+      "root": "libs/shared/config-environments",
+      "sourceRoot": "libs/shared/config-environments/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/config-environments/src/**/*.ts",
+              "libs/shared/config-environments/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/config-environments"],
+          "options": {
+            "jestConfig": "libs/shared/config-environments/jest.config.js",
             "passWithNoTests": true
           }
         }

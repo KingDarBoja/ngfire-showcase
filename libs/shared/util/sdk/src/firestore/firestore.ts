@@ -11,7 +11,7 @@ import {
 } from '@angular/fire/firestore';
 import { from, Observable, of } from 'rxjs';
 import { map, mapTo, tap } from 'rxjs/operators';
-import { environment } from '@ngfire-showcase/web/core/environments';
+import { environment } from '@ngfire-showcase/shared/config-environments';
 import firebase from 'firebase/app';
 import 'firebase/firestore';
 
@@ -21,11 +21,15 @@ interface FirestoreIdentifier {
 type FirestoreDocument<T> = T & FirestoreIdentifier;
 
 interface FirestoreBaseService<T> {
-  doc$(id: string): Observable<FirestoreDocument<T> | undefined>;   // Read: Get
-  collection$(): Observable<FirestoreDocument<T>[]>;                // Read: List
+  doc$(id: string): Observable<FirestoreDocument<T> | undefined>; // Read: Get
+  collection$(): Observable<FirestoreDocument<T>[]>; // Read: List
   create$(value: T): Observable<string>;
   upsert$(value: Partial<T>, setOptions?: SetOptions): Observable<string>;
-  update$(id: string, value: Partial<T>, setOptions?: SetOptions): Observable<string>;
+  update$(
+    id: string,
+    value: Partial<T>,
+    setOptions?: SetOptions
+  ): Observable<string>;
   delete$(id: string): Observable<void>;
 }
 
@@ -40,7 +44,8 @@ interface FirestoreBaseService<T> {
  * - https://indepth.dev/posts/1322/firebase-ngxs-the-perfect-couple
  */
 @Injectable()
-export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>> implements FirestoreBaseService<T> {
+export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>>
+  implements FirestoreBaseService<T> {
   protected abstract basePath: string;
   // TODO: Not used atm
   protected converter: firebase.firestore.FirestoreDataConverter<T> = {
@@ -158,9 +163,7 @@ export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>> i
     return this.docSet(id, newValue as T, setOptions);
   }
 
-  private getDataWithId(
-    doc: QueryDocumentSnapshot<T>
-  ): FirestoreDocument<T> {
+  private getDataWithId(doc: QueryDocumentSnapshot<T>): FirestoreDocument<T> {
     const data: T = doc.data();
     const id = data.id || doc.id;
     return { ...data, id: id };

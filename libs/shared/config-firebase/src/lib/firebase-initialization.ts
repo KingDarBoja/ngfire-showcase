@@ -20,7 +20,7 @@ import 'firebase/auth';
 import 'firebase/functions';
 
 // Environment Config
-import { environment } from '@ngfire-showcase/web/core/environments';
+import { environment } from '@ngfire-showcase/shared/config-environments';
 
 const app = firebase.initializeApp(environment.firebase);
 if (environment.useEmulators) {
