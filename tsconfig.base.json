@@ -37,6 +37,9 @@
       "@ngfire-showcase/company/feature": ["libs/company/feature/src/index.ts"],
       "@ngfire-showcase/job-post/feature": [
         "libs/job-post/feature/src/index.ts"
+      ],
+      "@ngfire-showcase/shared/config-transloco": [
+        "libs/shared/config-transloco/src/index.ts"
       ]
     }
   },

@@ -415,6 +415,31 @@
           }
         }
       }
+    },
+    "shared-config-transloco": {
+      "projectType": "library",
+      "root": "libs/shared/config-transloco",
+      "sourceRoot": "libs/shared/config-transloco/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/config-transloco/src/**/*.ts",
+              "libs/shared/config-transloco/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/config-transloco"],
+          "options": {
+            "jestConfig": "libs/shared/config-transloco/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {

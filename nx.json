@@ -1,14 +1,9 @@
 {
   "npmScope": "ngfire-showcase",
-  "affected": {
-    "defaultBase": "master"
-  },
+  "affected": { "defaultBase": "master" },
   "implicitDependencies": {
     "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
-    },
+    "package.json": { "dependencies": "*", "devDependencies": "*" },
     "tsconfig.base.json": "*",
     "tslint.json": "*",
     ".eslintrc.json": "*",
@@ -17,51 +12,25 @@
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+      "options": { "cacheableOperations": ["build", "lint", "test", "e2e"] }
     }
   },
   "projects": {
-    "coljobs": {
-      "tags": []
-    },
-    "coljobs-e2e": {
-      "tags": [],
-      "implicitDependencies": ["coljobs"]
-    },
+    "coljobs": { "tags": [] },
+    "coljobs-e2e": { "tags": [], "implicitDependencies": ["coljobs"] },
     "web-core-configuration-firebase": {
       "tags": ["scope:shared", "type:config"]
     },
-    "web-core-environments": {
-      "tags": ["scope:shared", "type:config"]
-    },
-    "web-ui-form": {
-      "tags": ["scope:shared", "type:ui"]
-    },
-    "shared-util-sdk": {
-      "tags": ["scope:shared", "type:util"]
-    },
-    "web-shell-feature": {
-      "tags": ["scope:web", "type:feature"]
-    },
-    "web-layout": {
-      "tags": ["scope:web", "type:layout"]
-    },
-    "web-ui-table": {
-      "tags": ["scope:web", "type:ui"]
-    },
-    "company-data-access": {
-      "tags": ["scope:company", "type:data-access"]
-    },
-    "job-post-data-access": {
-      "tags": ["scope:job-post", "type:data-access"]
-    },
-    "company-feature": {
-      "tags": ["scope:company", "type:feature"]
-    },
-    "job-post-feature": {
-      "tags": ["scope:job-post", "type:feature"]
-    }
+    "web-core-environments": { "tags": ["scope:shared", "type:config"] },
+    "web-ui-form": { "tags": ["scope:shared", "type:ui"] },
+    "shared-util-sdk": { "tags": ["scope:shared", "type:util"] },
+    "web-shell-feature": { "tags": ["scope:web", "type:feature"] },
+    "web-layout": { "tags": ["scope:web", "type:layout"] },
+    "web-ui-table": { "tags": ["scope:web", "type:ui"] },
+    "company-data-access": { "tags": ["scope:company", "type:data-access"] },
+    "job-post-data-access": { "tags": ["scope:job-post", "type:data-access"] },
+    "company-feature": { "tags": ["scope:company", "type:feature"] },
+    "job-post-feature": { "tags": ["scope:job-post", "type:feature"] },
+    "shared-config-transloco": { "tags": ["scope:shared", "type:config"] }
   }
 }
