@@ -16,7 +16,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngfire-forms",
+            "prefix": "ngf-form",
             "style": "camelCase"
           }
         ],
@@ -24,7 +24,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ngfire-forms",
+            "prefix": "ngf-form",
             "style": "kebab-case"
           }
         ]

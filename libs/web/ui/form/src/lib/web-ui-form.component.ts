@@ -7,7 +7,7 @@ import {
 } from '@ngx-formly/core';
 
 @Component({
-  selector: 'ngfire-forms-wrapper',
+  selector: 'ngf-form',
   template: `
     <form [formGroup]="form" novalidate (ngSubmit)="submit()">
       <formly-form
@@ -19,12 +19,12 @@ import {
     </form>
   `,
 })
-export class WebUiFormComponent<T extends Record<string, unknown>> implements OnInit {
+export class WebUiFormComponent implements OnInit {
   @Input() form: FormGroup = new FormGroup({});
   @Input() fields: FormlyFieldConfig[] = [];
-  @Input() model!: T;
+  @Input() model: Record<string, unknown> = {};
   @Input() options: FormlyFormOptions = {};
-  @Output() submitForm = new EventEmitter<T>();
+  @Output() submitForm = new EventEmitter<Record<string, unknown>>();
 
   constructor(private builder: FormlyFormBuilder) {}
 
