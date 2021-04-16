@@ -10,12 +10,20 @@ import {
   selector: 'ngf-form',
   template: `
     <form [formGroup]="form" novalidate (ngSubmit)="submit()">
-      <formly-form
-        [form]="form"
-        [fields]="fields"
-        [model]="model"
-        [options]="options"
-      ></formly-form>
+      <div>
+        <formly-form
+          [form]="form"
+          [fields]="fields"
+          [model]="model"
+          [options]="options"
+        ></formly-form>
+        <button
+          type="submit"
+          style="display: none;"
+          [disabled]="form.touched && !form.valid"
+        ></button>
+      </div>
+      <ng-content></ng-content>
     </form>
   `,
 })
