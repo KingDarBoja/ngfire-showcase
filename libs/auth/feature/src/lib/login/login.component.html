@@ -1,0 +1,11 @@
+<ng-container *ngIf="vm$ | async as vm">
+  <ngf-auth-page
+    (submitForm)="submit($event)"
+    [error]="vm.errorCode"
+    [fields]="fields"
+    buttonTitle="Log in"
+    linkPath="/register"
+    linkTitle="Register"
+    pageTitle="Login"
+  ></ngf-auth-page>
+</ng-container>

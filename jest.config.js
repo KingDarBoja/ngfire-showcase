@@ -13,5 +13,8 @@ module.exports = {
     '<rootDir>/libs/job-post/data-access',
     '<rootDir>/libs/job-post/feature-list',
     '<rootDir>/libs/shared/config-transloco',
+    '<rootDir>/libs/auth/data-access',
+    '<rootDir>/libs/auth/feature',
+    '<rootDir>/libs/auth/ui',
   ],
 };

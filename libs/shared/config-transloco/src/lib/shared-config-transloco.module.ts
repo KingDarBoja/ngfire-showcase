@@ -54,6 +54,7 @@ export class SharedConfigTranslocoModule {
           useValue: {
             availableLangs: availableLangs,
             defaultLang: 'en',
+            fallbackLang: 'en',
             prodMode: prodMode,
             // Remove this option if your application doesn't support changing
             // language in runtime.

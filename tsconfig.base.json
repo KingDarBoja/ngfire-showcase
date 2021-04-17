@@ -40,7 +40,12 @@
       ],
       "@ngfire-showcase/shared/config-environments": [
         "libs/shared/config-environments/src/index.ts"
-      ]
+      ],
+      "@ngfire-showcase/auth/data-access": [
+        "libs/auth/data-access/src/index.ts"
+      ],
+      "@ngfire-showcase/auth/feature": ["libs/auth/feature/src/index.ts"],
+      "@ngfire-showcase/auth/ui": ["libs/auth/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -440,6 +440,81 @@
           }
         }
       }
+    },
+    "auth-data-access": {
+      "projectType": "library",
+      "root": "libs/auth/data-access",
+      "sourceRoot": "libs/auth/data-access/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/auth/data-access/src/**/*.ts",
+              "libs/auth/data-access/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/auth/data-access"],
+          "options": {
+            "jestConfig": "libs/auth/data-access/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "auth-feature": {
+      "projectType": "library",
+      "root": "libs/auth/feature",
+      "sourceRoot": "libs/auth/feature/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/auth/feature/src/**/*.ts",
+              "libs/auth/feature/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/auth/feature"],
+          "options": {
+            "jestConfig": "libs/auth/feature/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "auth-ui": {
+      "projectType": "library",
+      "root": "libs/auth/ui",
+      "sourceRoot": "libs/auth/ui/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/auth/ui/src/**/*.ts",
+              "libs/auth/ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/auth/ui"],
+          "options": {
+            "jestConfig": "libs/auth/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
