@@ -1,0 +1,7 @@
+{
+  "auth/invalid-email": "The email address is badly formatted.",
+  "auth/user-disabled": "The user account has been disabled by an administrator.",
+  "auth/user-not-found": "There is no user record corresponding to this identifier.",
+  "auth/wrong-password": "The password is invalid or the user does not have a password.",
+  "auth/internal-error": "An internal Error has occurred."
+}

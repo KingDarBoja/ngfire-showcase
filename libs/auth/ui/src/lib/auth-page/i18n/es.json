@@ -1,0 +1,7 @@
+{
+  "auth/invalid-email": "La dirección de correo electrónico está mal redactada.",
+  "auth/user-disabled": "La cuenta de usuario ha sido desactivada por un administrador.",
+  "auth/user-not-found": "No hay ningún usuario correspondiente a estas credenciales.",
+  "auth/wrong-password": "La contraseña es inválida o el usuario no tiene contraseña.",
+  "auth/internal-error": "Se ha producido un error interno."
+}

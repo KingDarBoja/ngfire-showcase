@@ -25,10 +25,10 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     AuthPageModule,
     AuthDataAccessModule,
-    SharedConfigTranslocoModule.forChild(
-      'login',
-      InlineScopeLoader((lang, root) => import(`./${root}/${lang}.json`))
-    ),
+    // SharedConfigTranslocoModule.forChild(
+    //   'login',
+    //   InlineScopeLoader((lang, root) => import(`./${root}/${lang}.json`))
+    // ),
   ],
 })
 export class LoginModule {}

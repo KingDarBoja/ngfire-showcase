@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { TranslocoService } from '@ngneat/transloco';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
 @Component({
@@ -16,4 +17,8 @@ export class AuthPageComponent {
   @Input() fields: FormlyFieldConfig[] = [];
   @Input() pageTitle = '';
   @Output() submitForm = new EventEmitter();
+
+  constructor(private readonly translocoService: TranslocoService) {
+    console.log(this.translocoService.getTranslation());
+  }
 }
