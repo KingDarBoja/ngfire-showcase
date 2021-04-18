@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
-import { defer, of } from 'rxjs';
+import { of } from 'rxjs';
 import { catchError, exhaustMap, map, take } from 'rxjs/operators';
 import {
   AuthErrorCode,
@@ -57,11 +57,7 @@ export class AuthEffects {
   loginWithEmail$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loginWithEmail),
-      exhaustMap((action) =>
-        defer(() =>
-          this.afAuth.signInWithEmailAndPassword(action.email, action.password)
-        )
-      ),
+      exhaustMap((action) => this.afAuth.signInWithEmailAndPassword(action.email, action.password)),
       map(() => getUser()),
       catchError((err: FirebaseAuthError) =>
         of(authError({ errorCode: this.normalizeLoginError(err.code) }))
