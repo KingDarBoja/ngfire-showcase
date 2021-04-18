@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthFacade, AuthLoginInput } from '@ngfire-showcase/auth/data-access';
 import { WebUiFormField } from '@ngfire-showcase/web/ui/form';
+import { TranslocoService } from '@ngneat/transloco';
 
 /**
  * The auth error code thrown by **AngularFireAuth** `signinwithemailandpassword`
@@ -31,7 +32,9 @@ export class LoginComponent {
     WebUiFormField.password<AuthLoginInput>('password', { label: 'Password', required: true }),
   ];
 
-  constructor(private readonly authFacade: AuthFacade) {}
+  constructor(private readonly authFacade: AuthFacade, private readonly translocoService: TranslocoService) {
+    console.log(this.translocoService.getTranslation());
+  }
 
   submit(input: AuthLoginInput) {
     this.authFacade.loginWithEmail(input);
