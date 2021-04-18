@@ -3,5 +3,10 @@
   "auth/user-disabled": "The user account has been disabled by an administrator.",
   "auth/user-not-found": "There is no user record corresponding to this identifier.",
   "auth/wrong-password": "The password is invalid or the user does not have a password.",
-  "auth/internal-error": "An internal Error has occurred."
+  "auth/internal-error": "An internal Error has occurred.",
+  "login": {
+    "pageTitle": "Login",
+    "buttonTitle": "Log In",
+    "linkTitle": "Register"
+  }
 }

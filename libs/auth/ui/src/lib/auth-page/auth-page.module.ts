@@ -1,10 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {
-  InlineScopeLoader,
-  SharedConfigTranslocoModule,
-} from '@ngfire-showcase/shared/config-transloco';
+import { SharedConfigTranslocoModule } from '@ngfire-showcase/shared/config-transloco';
 import { WebUiFormModule } from '@ngfire-showcase/web/ui/form';
 
 import { AuthPageComponent } from './auth-page.component';
@@ -13,11 +10,8 @@ import { AuthPageComponent } from './auth-page.component';
   imports: [
     CommonModule,
     RouterModule,
-    SharedConfigTranslocoModule.forChild(
-      'auth',
-      InlineScopeLoader((lang, root) => import(`./${root}/${lang}.json`))
-    ),
     WebUiFormModule,
+    SharedConfigTranslocoModule,
   ],
   declarations: [AuthPageComponent],
   exports: [AuthPageComponent],
