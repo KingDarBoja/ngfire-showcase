@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, exhaustMap, map } from 'rxjs/operators';
+import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
 import {
   AuthErrorCode,
   FirebaseAuthError,
@@ -43,6 +44,16 @@ export class AuthEffects {
     )
   );
 
+  navigateToDashboard$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(authenticated),
+      tap(() => {
+        console.log('Do Something');
+        this.router.navigateByUrl('/');
+      }),
+    ), { dispatch: false }
+  );
+
   /**
    * Perform a call to **AngularFireAuth** `signinwithemailandpassword` method
    * and then get the user data on success and throws an error on failure, where
@@ -76,6 +87,7 @@ export class AuthEffects {
 
   constructor(
     private readonly actions$: Actions,
+    private readonly router: Router,
     private readonly afAuth: AngularFireAuth
   ) {}
 
