@@ -1,7 +1,7 @@
 /**
  * Interface for the 'Auth' data. These fields come from `firebase.UserInfo`.
  */
-export interface AuthEntity {
+export interface AuthUserEntity {
   /** The user's unique ID. Primary ID. */
   uid: string;
   displayName: string | null;

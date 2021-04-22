@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { createEffect, Actions, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
-import { catchError, exhaustMap, map, take } from 'rxjs/operators';
+import { catchError, exhaustMap, map } from 'rxjs/operators';
 import {
   AuthErrorCode,
   FirebaseAuthError,
@@ -24,13 +24,20 @@ export class AuthEffects {
       ofType(getUser),
       exhaustMap(() =>
         this.afAuth.user.pipe(
-          take(1),
-          map((auth) => {
-            if (auth) {
-              return authenticated({ auth });
-            }
-            return notAuthenticated();
-          })
+          map((authUser) =>
+            authUser
+              ? authenticated({
+                  authUser: {
+                    uid: authUser.uid,
+                    displayName: authUser.displayName,
+                    email: authUser.email,
+                    phoneNumber: authUser.phoneNumber,
+                    photoURL: authUser.photoURL,
+                    providerId: authUser.providerId,
+                  },
+                })
+              : notAuthenticated()
+          )
         )
       )
     )
@@ -57,7 +64,9 @@ export class AuthEffects {
   loginWithEmail$ = createEffect(() =>
     this.actions$.pipe(
       ofType(loginWithEmail),
-      exhaustMap((action) => this.afAuth.signInWithEmailAndPassword(action.email, action.password)),
+      exhaustMap((action) =>
+        this.afAuth.signInWithEmailAndPassword(action.email, action.password)
+      ),
       map(() => getUser()),
       catchError((err: FirebaseAuthError) =>
         of(authError({ errorCode: this.normalizeLoginError(err.code) }))
@@ -66,7 +75,7 @@ export class AuthEffects {
   );
 
   constructor(
-    private actions$: Actions,
+    private readonly actions$: Actions,
     private readonly afAuth: AngularFireAuth
   ) {}
 

@@ -11,7 +11,7 @@ export class AuthPageComponent {
   @Input() buttonTitle = '';
   @Input() linkPath: string | null = null;
   @Input() linkTitle = '';
-  @Input() error: string | null = null;
+  @Input() error?: string;
   @Input() form = new FormGroup({});
   @Input() fields: FormlyFieldConfig[] = [];
   @Input() pageTitle = '';

@@ -9,10 +9,10 @@ export const getAuthState = createFeatureSelector<
 
 export const isLoggedIn = createSelector(
   getAuthState,
-  (state) => !!state.auth,
+  (state) => !!state.authUser,
 )
 
 export const getAuthUser = createSelector(
   getAuthState,
-  (state: State) => state.auth,
+  (state: State) => state.authUser,
 )

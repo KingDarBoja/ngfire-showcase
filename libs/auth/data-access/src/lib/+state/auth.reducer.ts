@@ -1,14 +1,13 @@
 import { createReducer, on, Action } from '@ngrx/store';
 import { authenticated, authError, notAuthenticated } from './auth.actions';
-import { AuthEntity } from './auth.models';
-// import firebase from 'firebase/app';
+import { AuthUserEntity } from './auth.models';
 
 export const AUTH_FEATURE_KEY = 'auth';
 
 export interface State {
-  readonly auth: AuthEntity | null;
+  authUser?: AuthUserEntity;
   // error: firebase.auth.Error | null,
-  errorCode: string | null,
+  errorCode?: string,
   loading: boolean;
   success: boolean;
 }
@@ -19,18 +18,18 @@ export interface AuthPartialState {
 
 export const initialState: State = {
   // set initial required properties
-  auth: null,
+  authUser: undefined,
   // error: null,
-  errorCode: null,
+  errorCode: undefined,
   loading: true,
   success: false,
 };
 
 const authReducer = createReducer(
   initialState,
-  on(authenticated, (state, { auth }) => ({
+  on(authenticated, (state, { authUser }) => ({
     ...state,
-    auth,
+    authUser,
     loading: false,
     success: true,
   })),

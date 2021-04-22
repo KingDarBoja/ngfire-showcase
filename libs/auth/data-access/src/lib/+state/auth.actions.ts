@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { AuthEntity } from './auth.models';
+import { AuthUserEntity } from './auth.models';
 
 export const loginWithEmail = createAction(
   '[Auth] Login With Email',
@@ -7,7 +7,7 @@ export const loginWithEmail = createAction(
 );
 export const authenticated = createAction(
   '[Auth] Authenticated',
-  props<{ auth: AuthEntity }>()
+  props<{ authUser: AuthUserEntity }>()
 );
 export const notAuthenticated = createAction('[Auth] Not Authenticated');
 export const authError = createAction(
