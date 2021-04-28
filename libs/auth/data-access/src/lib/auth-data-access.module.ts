@@ -7,6 +7,7 @@ import { AuthEffects } from './+state/auth.effects';
 import { AUTH_FEATURE_KEY, reducer } from './+state/auth.reducer';
 import { AuthFacade } from './+state/auth.facade';
 import { LoggedInGuard } from './guards/logged-in.guard';
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [
@@ -15,6 +16,6 @@ import { LoggedInGuard } from './guards/logged-in.guard';
     StoreModule.forFeature(AUTH_FEATURE_KEY, reducer),
     EffectsModule.forFeature([AuthEffects]),
   ],
-  providers: [AuthFacade, LoggedInGuard],
+  providers: [AuthFacade, AuthService, LoggedInGuard],
 })
 export class AuthDataAccessModule {}

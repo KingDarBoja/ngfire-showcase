@@ -14,4 +14,3 @@ export const authError = createAction(
   '[Auth] Error',
   props<{ errorCode: string }>()
 );
-export const getUser = createAction('[Auth] Get User');
