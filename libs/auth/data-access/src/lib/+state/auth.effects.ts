@@ -5,10 +5,12 @@ import { of } from 'rxjs';
 import { catchError, exhaustMap, map, tap } from 'rxjs/operators';
 
 import {
-  authenticated,
   authError,
+  confirmLogout,
+  loginFailure,
+  loginSuccess,
   loginWithEmail,
-  notAuthenticated,
+  logoutConfirmed,
 } from './auth.actions';
 import { AuthService } from '../auth.service';
 
@@ -20,8 +22,20 @@ export class AuthEffects {
       exhaustMap((action) =>
         this.authService.signInWithEmailAndPassword(action).pipe(
           map((authUser) =>
-            authUser ? authenticated({ authUser }) : notAuthenticated()
+            authUser ? loginSuccess({ authUser }) : loginFailure()
           ),
+          catchError((error) => of(authError({ errorCode: error.code })))
+        )
+      )
+    )
+  );
+
+  confirmLogout$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(confirmLogout),
+      exhaustMap(() =>
+        this.authService.signOut().pipe(
+          map(() => logoutConfirmed()),
           catchError((error) => of(authError({ errorCode: error.code })))
         )
       )
@@ -31,10 +45,17 @@ export class AuthEffects {
   navigateToDashboard$ = createEffect(
     () =>
       this.actions$.pipe(
-        ofType(authenticated),
-        tap(() => {
-          this.router.navigateByUrl('/');
-        })
+        ofType(loginSuccess),
+        tap(() => this.router.navigateByUrl('/'))
+      ),
+    { dispatch: false }
+  );
+
+  navigateToLogin$ = createEffect(
+    () =>
+      this.actions$.pipe(
+        ofType(logoutConfirmed),
+        tap(() => this.router.navigateByUrl('/login'))
       ),
     { dispatch: false }
   );

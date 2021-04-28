@@ -57,6 +57,10 @@ export class AuthService {
     );
   }
 
+  signOut(): Observable<void> {
+    return from(this.afAuth.signOut());
+  }
+
   /**
    * Handle the error thrown by `signInWithEmailAndPassword` for those codes that have no possible
    * translation by converting the unknown error to auth/internal-error so it

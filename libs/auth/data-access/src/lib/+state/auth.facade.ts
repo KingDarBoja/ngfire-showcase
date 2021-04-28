@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Store } from '@ngrx/store';
-import { loginWithEmail } from './auth.actions';
+import { confirmLogout, loginWithEmail } from './auth.actions';
 import { AuthPartialState } from './auth.reducer';
 import { getAuthState, getAuthUser } from './auth.selectors';
 
@@ -23,5 +23,9 @@ export class AuthFacade {
 
   loginWithEmail({ email, password }: AuthLoginInput) {
     this.store.dispatch(loginWithEmail({ email, password }));
+  }
+
+  logout() {
+    this.store.dispatch(confirmLogout());
   }
 }

@@ -1,5 +1,5 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import { authenticated, authError, notAuthenticated } from './auth.actions';
+import { authError, loginFailure, loginSuccess, logoutConfirmed } from './auth.actions';
 import { AuthUserEntity } from './auth.models';
 
 export const AUTH_FEATURE_KEY = 'auth';
@@ -27,23 +27,27 @@ export const initialState: State = {
 
 const authReducer = createReducer(
   initialState,
-  on(authenticated, (state, { authUser }) => ({
-    ...state,
-    authUser,
-    loading: false,
-    success: true,
-  })),
-  on(notAuthenticated, (state) => ({
-    ...state,
-    loading: false,
-    success: false,
-  })),
   on(authError, (state, { errorCode }) => ({
     ...state,
     loading: false,
     success: false,
     errorCode,
   })),
+  on(loginSuccess, (state, { authUser }) => ({
+    ...state,
+    authUser,
+    errorCode: undefined,
+    loading: false,
+    success: true,
+  })),
+  on(loginFailure, (state) => ({
+    ...state,
+    loading: false,
+    success: false,
+  })),
+  on(logoutConfirmed, () => ({
+    ...initialState,
+  }))
 );
 
 export function reducer(state: State | undefined, action: Action) {
