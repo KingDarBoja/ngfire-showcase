@@ -1,5 +1,5 @@
 import { createReducer, on, Action } from '@ngrx/store';
-import { authError, loginFailure, loginSuccess, logoutConfirmed } from './auth.actions';
+import { authError, loadAuthFromApi, loginFailure, loginSuccess, logoutConfirmed } from './auth.actions';
 import { AuthUserEntity } from './auth.models';
 
 export const AUTH_FEATURE_KEY = 'auth';
@@ -32,6 +32,10 @@ const authReducer = createReducer(
     loading: false,
     success: false,
     errorCode,
+  })),
+  on(loadAuthFromApi, (state, { authUser }) => ({
+    ...state,
+    authUser: authUser ?? undefined,
   })),
   on(loginSuccess, (state, { authUser }) => ({
     ...state,

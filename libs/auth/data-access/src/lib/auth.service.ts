@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import {
   AuthErrorCode,
+  AuthUser,
   FirebaseAuthError,
 } from '@ngfire-showcase/shared/util/sdk';
 import type { AuthUserCredential } from '@ngfire-showcase/shared/util/sdk';
@@ -11,6 +12,10 @@ import { AuthUserEntity } from '..';
 
 @Injectable()
 export class AuthService {
+  readonly authState: Observable<AuthUserEntity | null> = this.afAuth.user.pipe(
+    map((user) => this.mapAuthUserToEntity(user))
+  );
+
   constructor(private readonly afAuth: AngularFireAuth) {}
 
   /**
@@ -39,26 +44,30 @@ export class AuthService {
     password: string;
   }): Observable<AuthUserEntity | null> {
     return from(this.afAuth.signInWithEmailAndPassword(email, password)).pipe(
-      map(({ user }: AuthUserCredential) =>
-        user
-          ? {
-              uid: user.uid,
-              displayName: user.displayName,
-              email: user.email,
-              phoneNumber: user.phoneNumber,
-              photoURL: user.photoURL,
-              providerId: user.providerId,
-            }
-          : null
-      ),
+      map(({ user }: AuthUserCredential) => this.mapAuthUserToEntity(user)),
       catchError((err: FirebaseAuthError) =>
-        throwError(new FirebaseAuthError(this.normalizeLoginError(err.code), err.message))
+        throwError(
+          new FirebaseAuthError(this.normalizeLoginError(err.code), err.message)
+        )
       )
     );
   }
 
   signOut(): Observable<void> {
     return from(this.afAuth.signOut());
+  }
+
+  private mapAuthUserToEntity(user: AuthUser | null) {
+    return user
+      ? {
+          uid: user.uid,
+          displayName: user.displayName,
+          email: user.email,
+          phoneNumber: user.phoneNumber,
+          photoURL: user.photoURL,
+          providerId: user.providerId,
+        }
+      : null;
   }
 
   /**

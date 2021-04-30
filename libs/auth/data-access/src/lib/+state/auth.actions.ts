@@ -9,6 +9,10 @@ export const loginWithEmail = createAction(
   '[Auth] Login With Email',
   props<{ email: string; password: string }>()
 );
+export const loadAuthFromApi = createAction(
+  '[Auth] Load Auth From API',
+  props<{ authUser: AuthUserEntity | null }>()
+);
 export const loginSuccess = createAction(
   '[Auth] Authenticated',
   props<{ authUser: AuthUserEntity }>()
