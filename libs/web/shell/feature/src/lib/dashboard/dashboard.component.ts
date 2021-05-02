@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
 @Component({
-  template: ` <h1>Dashboard</h1> `,
+  template: ` <h2>Dashboard</h2> `,
 })
 export class DashboardComponent {}

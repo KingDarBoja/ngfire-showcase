@@ -1,7 +1,9 @@
 <div class="flex flex-col h-full bg-gray-200">
-  <div class="bg-purple-800 text-white">Header goes here!</div>
-  <main class="flex-1 h-full overflow-auto">
+  <web-layout-header></web-layout-header>
+  <main class="h-full flex-1 p-4 container mx-auto overflow-auto">
     <router-outlet></router-outlet>
   </main>
-  <div class="bg-purple-300">Footer goes here! (optional)</div>
+  <web-layout-footer>
+    <div class="text-gray-100 font-bold">Made by KingDarBoja</div>
+  </web-layout-footer>
 </div>

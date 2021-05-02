@@ -14,7 +14,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngfire-showcase",
+            "prefix": "web-layout",
             "style": "camelCase"
           }
         ],
@@ -22,7 +22,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ngfire-showcase",
+            "prefix": "web-layout",
             "style": "kebab-case"
           }
         ]
