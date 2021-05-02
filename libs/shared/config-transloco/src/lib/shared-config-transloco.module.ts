@@ -7,7 +7,7 @@ import {
   TRANSLOCO_CONFIG,
   TRANSLOCO_SCOPE,
 } from '@ngneat/transloco';
-import { translocoLoader } from './transloco.loader';
+// import { translocoLoader } from './transloco.loader';
 
 export type AvailableLang = string | { id: string; label: string } | undefined;
 
@@ -64,7 +64,7 @@ export class SharedConfigTranslocoModule {
             },
           } as TranslocoConfig,
         },
-        translocoLoader,
+        // translocoLoader,
       ],
     };
   }
