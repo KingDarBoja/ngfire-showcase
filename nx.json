@@ -33,6 +33,7 @@
     "auth-data-access": { "tags": ["scope:auth", "type:data-access"] },
     "auth-feature": { "tags": ["scope:auth", "type:feature"] },
     "auth-ui": { "tags": ["scope:auth", "type:ui"] },
-    "shared-styles": { "tags": ["scope:shared", "type:styles"] }
+    "shared-styles": { "tags": ["scope:shared", "type:styles"] },
+    "shared-assets": { "tags": ["scope:shared", "type:assets"] }
   }
 }

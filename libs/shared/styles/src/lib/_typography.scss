@@ -1,0 +1,120 @@
+@import "~@angular/material/theming";
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-Light.ttf") format("truetype");
+  font-weight: 100 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-LightItalic.ttf") format("truetype");
+  font-weight: 100 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-MediumItalic.ttf") format("truetype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-ExtraBoldItalic.ttf") format("truetype");
+  font-weight: 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url("/assets/fonts/Rubik-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+$rubik-typography: mat-typography-config(
+  $font-family: "Rubik, sans-serif",
+);
+
+// Override the typography in the core CSS.
+@include mat-core($rubik-typography);

@@ -17,8 +17,16 @@
             "tsConfig": "apps/coljobs/tsconfig.app.json",
             "aot": true,
             "assets": [
-              "apps/coljobs/src/favicon.ico",
-              "apps/coljobs/src/assets"
+              {
+                "glob": "favicon.ico",
+                "input": "libs/shared/assets/src",
+                "output": "./"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/shared/assets/src/assets",
+                "output": "assets"
+              }
             ],
             "styles": ["libs/shared/styles/src/index.scss"],
             "scripts": [],
@@ -520,6 +528,13 @@
       "projectType": "library",
       "root": "libs/shared/styles",
       "sourceRoot": "libs/shared/styles/src",
+      "prefix": "ngfire-showcase",
+      "architect": {}
+    },
+    "shared-assets": {
+      "projectType": "library",
+      "root": "libs/shared/assets",
+      "sourceRoot": "libs/shared/assets/src",
       "prefix": "ngfire-showcase",
       "architect": {}
     }

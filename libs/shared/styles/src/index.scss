@@ -1,6 +1,8 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 /* You can add global styles to this file, and also import other style files */
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
-@import './lib/global';
+@import "material-icons/iconfont/material-icons.css";
+@import "@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "./lib/typography";
+@import "./lib/global";
