@@ -7,13 +7,14 @@ import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { SharedDataAccessFirebaseModule } from '@ngfire-showcase/shared/config-firebase';
-import { WebLayoutComponent } from '@ngfire-showcase/web/layout';
 import { environment } from '@ngfire-showcase/shared/config-environments';
+import { SharedConfigTranslocoModule } from '@ngfire-showcase/shared/config-transloco';
+import { WebLayoutComponent } from '@ngfire-showcase/web/layout';
 import {
   AuthDataAccessModule,
   LoggedInGuard,
+  LoginGuard,
 } from '@ngfire-showcase/auth/data-access';
-import { SharedConfigTranslocoModule } from '@ngfire-showcase/shared/config-transloco';
 
 const routes: Routes = [
   {
@@ -51,6 +52,7 @@ const routes: Routes = [
   },
   {
     path: '',
+    canActivate: [LoginGuard],
     loadChildren: () =>
       import('@ngfire-showcase/auth/feature').then((m) => m.AuthFeatureModule),
   },

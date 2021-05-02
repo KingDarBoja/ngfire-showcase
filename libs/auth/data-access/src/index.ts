@@ -1,3 +1,4 @@
+export * from './lib/guards/login.guard';
 export * from './lib/guards/logged-in.guard';
 export * from './lib/+state/auth.actions';
 export * from './lib/+state/auth.reducer';
