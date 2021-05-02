@@ -45,7 +45,8 @@
         "libs/auth/data-access/src/index.ts"
       ],
       "@ngfire-showcase/auth/feature": ["libs/auth/feature/src/index.ts"],
-      "@ngfire-showcase/auth/ui": ["libs/auth/ui/src/index.ts"]
+      "@ngfire-showcase/auth/ui": ["libs/auth/ui/src/index.ts"],
+      "@ngfire-showcase/shared/styles": ["libs/shared/styles/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

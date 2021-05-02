@@ -32,6 +32,7 @@
     "shared-config-environments": { "tags": ["scope:shared", "type:config"] },
     "auth-data-access": { "tags": ["scope:auth", "type:data-access"] },
     "auth-feature": { "tags": ["scope:auth", "type:feature"] },
-    "auth-ui": { "tags": ["scope:auth", "type:ui"] }
+    "auth-ui": { "tags": ["scope:auth", "type:ui"] },
+    "shared-styles": { "tags": ["scope:shared", "type:styles"] }
   }
 }

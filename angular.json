@@ -20,7 +20,7 @@
               "apps/coljobs/src/favicon.ico",
               "apps/coljobs/src/assets"
             ],
-            "styles": ["apps/coljobs/src/styles.scss"],
+            "styles": ["libs/shared/styles/src/index.scss"],
             "scripts": [],
             "customWebpackConfig": {
               "path": "webpack.config.js"
@@ -515,6 +515,13 @@
           }
         }
       }
+    },
+    "shared-styles": {
+      "projectType": "library",
+      "root": "libs/shared/styles",
+      "sourceRoot": "libs/shared/styles/src",
+      "prefix": "ngfire-showcase",
+      "architect": {}
     }
   },
   "cli": {
