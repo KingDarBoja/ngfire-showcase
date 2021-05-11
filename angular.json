@@ -8,7 +8,7 @@
       "prefix": "ngfire-showcase",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/apps/coljobs",
             "index": "apps/coljobs/src/index.html",
@@ -29,10 +29,7 @@
               }
             ],
             "styles": ["libs/shared/styles/src/index.scss"],
-            "scripts": [],
-            "customWebpackConfig": {
-              "path": "webpack.config.js"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -69,7 +66,7 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
             "browserTarget": "coljobs:build"
           },
