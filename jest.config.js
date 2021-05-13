@@ -17,5 +17,6 @@ module.exports = {
     '<rootDir>/libs/auth/feature',
     '<rootDir>/libs/auth/ui',
     '<rootDir>/libs/shared/assets',
+    '<rootDir>/libs/shared/util/object',
   ],
 };
