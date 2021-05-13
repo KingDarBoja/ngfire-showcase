@@ -30,9 +30,11 @@ import {
 export class WebUiFormComponent implements OnInit {
   @Input() form: FormGroup = new FormGroup({});
   @Input() fields: FormlyFieldConfig[] = [];
-  @Input() model: Record<string, unknown> = {};
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  @Input() model: any = {};
   @Input() options: FormlyFormOptions = {};
-  @Output() submitForm = new EventEmitter<Record<string, unknown>>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  @Output() submitForm = new EventEmitter<any>();
 
   constructor(private builder: FormlyFormBuilder) {}
 

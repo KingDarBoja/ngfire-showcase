@@ -1,8 +1,9 @@
 import { FormlyFieldConfig, FormlyTemplateOptions } from '@ngx-formly/core';
+import { FlatBounded } from '@ngfire-showcase/shared/util/data-structures';
 
 export class WebUiFormField implements FormlyFieldConfig {
   static checkbox<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -10,7 +11,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static date<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -22,7 +23,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static datetime<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -34,7 +35,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static email<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -61,7 +62,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static field<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     type?: string,
     templateOptions: FormlyTemplateOptions = {},
     config: FormlyFieldConfig = {}
@@ -77,7 +78,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static input<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions: FormlyTemplateOptions = {},
     config: FormlyFieldConfig = {}
   ): FormlyFieldConfig {
@@ -85,7 +86,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static multicheckbox<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -93,7 +94,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static number<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -105,7 +106,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static password<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -120,7 +121,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static radio<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -128,7 +129,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static select<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -136,7 +137,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static textarea<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
@@ -155,7 +156,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   }
 
   static time<T>(
-    key: Extract<keyof T, string>,
+    key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
