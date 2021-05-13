@@ -12,15 +12,15 @@ export class JobPostListComponent {
   getJobPost$ = this.jobPostFacade.getJobPost$;
   cols: WebUiTableColumn<JobPostEntity>[] = [
     {
-      id: 'id',
+      field: 'id',
       header: 'Identifier',
     },
     {
-      id: 'companyId',
+      field: 'companyId',
       header: 'Company Ref.',
     },
     {
-      id: 'title',
+      field: 'title',
       header: 'Title',
     },
   ];

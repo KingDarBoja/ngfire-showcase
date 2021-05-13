@@ -1,4 +1,7 @@
 <h2 class="text-lg font-bold text-purple-800">Company Listing</h2>
+<section class="">
+  <button mat-stroked-button color="primary" (click)="addCompany()">Add Company</button>
+</section>
 <ng-container *ngIf="allCompanies$ | async as companies">
   <ngfire-showcase-table
     [data]="companies"

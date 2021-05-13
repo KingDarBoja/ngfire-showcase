@@ -5,6 +5,9 @@ import { CompanyDataAccessModule } from '@ngfire-showcase/company/data-access';
 import { WebUiTableModule } from '@ngfire-showcase/web/ui/table';
 import { CompanyListResolver } from './company-list.resolver';
 import { CompanyListComponent } from './company-list.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { AddCompanyDialogModule } from './add-company-example/add-company.module';
 
 const routes: Routes = [
   {
@@ -24,6 +27,11 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     CompanyDataAccessModule,
     WebUiTableModule,
+    AddCompanyDialogModule,
+    // For quick demo purposes, refactor the table header buttons into the
+    // web-ui module.
+    MatButtonModule,
+    MatDialogModule,
   ],
   providers: [CompanyListResolver],
 })
