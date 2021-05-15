@@ -1,0 +1,25 @@
+{
+  "firestore": {
+    "rules": "apps/coljobs-api/firestore.rules",
+    "indexes": "apps/coljobs-api/firestore.indexes.json"
+  },
+  "hosting": [],
+  "storage": {
+    "rules": "apps/coljobs-api/storage.rules"
+  },
+  "functions": {
+    "predeploy": ["nx build coljobs-api --with-deps", "nx lint coljobs-api"],
+    "source": "dist/apps/coljobs-api"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    }
+  }
+}

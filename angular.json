@@ -1,5 +1,38 @@
 {
   "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "defaultProject": "coljobs",
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress",
+      "strict": true
+    },
+    "@nrwl/angular:library": {
+      "style": "css",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "strict": true
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
   "projects": {
     "coljobs": {
       "projectType": "application",
@@ -555,39 +588,44 @@
           }
         }
       }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular"
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
+    },
+    "coljobs-api": {
+      "root": "apps/coljobs-api",
+      "sourceRoot": "apps/coljobs-api/src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@simondotm/nxfirebase:build",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/coljobs-api",
+            "main": "apps/coljobs-api/src/index.ts",
+            "tsConfig": "apps/coljobs-api/tsconfig.app.json",
+            "packageJson": "apps/coljobs-api/package.json",
+            "assets": ["apps/coljobs-api/*.md"]
+          }
+        },
+        "firebase": {
+          "builder": "@simondotm/nxfirebase:firebase",
+          "options": {
+            "firebaseConfig": "firebase.coljobs-api.json"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/coljobs-api/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/coljobs-api"],
+          "options": {
+            "jestConfig": "apps/coljobs-api/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
       }
-    },
-    "@nrwl/angular:application": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress",
-      "strict": true
-    },
-    "@nrwl/angular:library": {
-      "style": "css",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "strict": true
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
     }
-  },
-  "defaultProject": "coljobs"
+  }
 }
