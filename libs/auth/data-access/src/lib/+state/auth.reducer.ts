@@ -4,7 +4,7 @@ import { AuthUserEntity } from './auth.models';
 
 export const AUTH_FEATURE_KEY = 'auth';
 
-export interface State {
+export interface AuthState {
   authUser?: AuthUserEntity;
   // error: firebase.auth.Error | null,
   errorCode?: string,
@@ -12,11 +12,7 @@ export interface State {
   success: boolean;
 }
 
-export interface AuthPartialState {
-  readonly [AUTH_FEATURE_KEY]: State;
-}
-
-export const initialState: State = {
+export const initialState: AuthState = {
   // set initial required properties
   authUser: undefined,
   // error: null,
@@ -27,33 +23,33 @@ export const initialState: State = {
 
 const authReducer = createReducer(
   initialState,
-  on(authError, (state, { errorCode }) => ({
+  on(authError, (state, { errorCode }): AuthState => ({
     ...state,
     loading: false,
     success: false,
     errorCode,
   })),
-  on(loadAuthFromApi, (state, { authUser }) => ({
+  on(loadAuthFromApi, (state, { authUser }): AuthState => ({
     ...state,
     authUser: authUser ?? undefined,
   })),
-  on(loginSuccess, (state, { authUser }) => ({
+  on(loginSuccess, (state, { authUser }): AuthState => ({
     ...state,
     authUser,
     errorCode: undefined,
     loading: false,
     success: true,
   })),
-  on(loginFailure, (state) => ({
+  on(loginFailure, (state): AuthState => ({
     ...state,
     loading: false,
     success: false,
   })),
-  on(logoutConfirmed, () => ({
+  on(logoutConfirmed, (): AuthState => ({
     ...initialState,
   }))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: AuthState | undefined, action: Action) {
   return authReducer(state, action);
 }

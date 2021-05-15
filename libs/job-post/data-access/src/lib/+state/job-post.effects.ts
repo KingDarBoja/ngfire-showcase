@@ -11,13 +11,12 @@ import {
   jobPostsChanged,
   searchParamsChanged,
 } from './job-post.actions';
-import { JobPostPartialState } from './job-post.reducer';
 import { getSearchParams } from './job-post.selectors';
 
 @Injectable()
 export class JobPostEffects {
-  companyChanged$ = createEffect(() =>
-    this.actions$.pipe(
+  companyChanged$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(companyChanged),
       // Get all the search params from the store.
       withLatestFrom(this.store.select(getSearchParams)),
@@ -28,11 +27,11 @@ export class JobPostEffects {
       })),
       // Dispatch action that the search params changed.
       map((searchParams) => searchParamsChanged({ searchParams }))
-    )
-  );
+    );
+  });
 
-  countryChanged$ = createEffect(() =>
-    this.actions$.pipe(
+  countryChanged$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(countryChanged),
       // Get all the search params from the store.
       withLatestFrom(this.store.select(getSearchParams)),
@@ -43,11 +42,11 @@ export class JobPostEffects {
       })),
       // Dispatch action that the search params changed.
       map((searchParams) => searchParamsChanged({ searchParams }))
-    )
-  );
+    );
+  });
 
-  searchParamsChanged$ = createEffect(() =>
-    this.actions$.pipe(
+  searchParamsChanged$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(searchParamsChanged),
       switchMap(({ searchParams }) => {
         let colQuery$ = this.jobPostFS.collection$();
@@ -64,12 +63,12 @@ export class JobPostEffects {
           })
         );
       })
-    )
-  );
+    );
+  });
 
   constructor(
     private actions$: Actions,
-    private store: Store<JobPostPartialState>,
+    private store: Store,
     private readonly jobPostFS: JobPostFirestoreService
   ) {}
 }

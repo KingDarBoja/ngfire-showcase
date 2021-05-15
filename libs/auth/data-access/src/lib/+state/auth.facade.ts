@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 
 import { Store } from '@ngrx/store';
 import { confirmLogout, loginWithEmail } from './auth.actions';
-import { AuthPartialState } from './auth.reducer';
 import { getAuthState, getAuthUser } from './auth.selectors';
 
 export interface AuthLoginInput {
@@ -19,7 +18,7 @@ export class AuthFacade {
   getAuthState$ = this.store.select(getAuthState);
   getAuthUser$ = this.store.select(getAuthUser);
 
-  constructor(private store: Store<AuthPartialState>) {}
+  constructor(private store: Store) {}
 
   loginWithEmail({ email, password }: AuthLoginInput) {
     this.store.dispatch(loginWithEmail({ email, password }));

@@ -8,17 +8,20 @@ import { companiesChanged, navigatedToCompanies } from './company.actions';
 
 @Injectable()
 export class CompanyEffects {
-  navigatedToCompanies$ = createEffect(() =>
-    this.actions$.pipe(
+  navigatedToCompanies$ = createEffect(() => {
+    return this.actions$.pipe(
       ofType(navigatedToCompanies),
-      switchMap(() => this.companyFS.collection$()),
-      map((companies) => companiesChanged({ companies })),
-      catchError((err) => {
-        console.error(err);
-        return EMPTY;
-      })
-    )
-  );
+      switchMap(() =>
+        this.companyFS.collection$().pipe(
+          map((companies) => companiesChanged({ companies })),
+          catchError((err) => {
+            console.error(err);
+            return EMPTY;
+          })
+        )
+      )
+    );
+  });
 
   constructor(
     private actions$: Actions,

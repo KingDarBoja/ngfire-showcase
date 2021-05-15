@@ -5,27 +5,23 @@ import { CompanyEntity } from './company.models';
 
 export const COMPANY_FEATURE_KEY = 'company';
 
-export interface State {
+export interface CompanyState {
   companies: ReadonlyArray<CompanyEntity>;
 }
 
-export interface CompanyPartialState {
-  readonly [COMPANY_FEATURE_KEY]: State;
-}
-
-export const initialState: State = {
+export const initialState: CompanyState = {
   // set initial required properties
   companies: [],
 };
 
 const companyReducer = createReducer(
   initialState,
-  on(companiesChanged, (state, { companies }) => ({
+  on(companiesChanged, (state, { companies }): CompanyState => ({
     ...state,
     companies,
   }))
 );
 
-export function reducer(state: State | undefined, action: Action) {
+export function reducer(state: CompanyState | undefined, action: Action) {
   return companyReducer(state, action);
 }

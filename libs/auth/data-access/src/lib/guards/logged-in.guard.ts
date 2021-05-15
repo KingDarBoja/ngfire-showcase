@@ -1,27 +1,22 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, UrlTree } from '@angular/router';
-import { select, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { catchError, map, switchMap, take, tap } from 'rxjs/operators';
 import { loadAuthFromApi } from '../+state/auth.actions';
-import { AuthPartialState } from '../+state/auth.reducer';
 import { isLoggedIn } from '../+state/auth.selectors';
 import { AuthService } from '../auth.service';
 
 @Injectable()
 export class LoggedInGuard implements CanActivate {
   constructor(
-    private readonly store: Store<AuthPartialState>,
+    private readonly store: Store,
     private readonly router: Router,
     private readonly authService: AuthService
   ) {}
 
   hasAuthInStore(): Observable<boolean> {
-    return this.store.pipe(
-      select(isLoggedIn),
-      map((loggedIn) => loggedIn),
-      take(1)
-    );
+    return this.store.select(isLoggedIn).pipe(take(1));
   }
 
   hasAuthInApi(): Observable<boolean> {
