@@ -611,6 +611,23 @@
             "firebaseConfig": "firebase.coljobs-api.json"
           }
         },
+        "serve": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              {
+                "command": "nx run coljobs-api:build"
+              },
+              {
+                "command": "firebase use coljobs-db"
+              },
+              {
+                "command": "firebase emulators:start --config firebase.coljobs-api.json"
+              }
+            ],
+            "parallel": false
+          }
+        },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
