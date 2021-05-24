@@ -18,7 +18,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
         <section class="flex flex-row justify-end space-x-6 mt-6">
           <button
             mat-stroked-button
-            color="primary"
+            color="warn"
             (click)="onCancel()"
             cdkFocusInitial
           >
@@ -26,7 +26,7 @@ import { FormlyFieldConfig } from '@ngx-formly/core';
           </button>
           <button
             mat-flat-button
-            color="warn"
+            color="accent"
             [disabled]="!form.valid"
             type="submit"
           >
@@ -44,6 +44,7 @@ export class AddCompanyDialogComponent {
       label: 'Name',
       required: true,
     }),
+    WebUiFormField.datetime('creation', { label: 'Creation Datetime', required: true }),
     {
       key: 'address',
       type: 'repeat',

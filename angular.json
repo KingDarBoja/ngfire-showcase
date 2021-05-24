@@ -62,6 +62,11 @@
               }
             ],
             "styles": ["libs/shared/styles/src/index.scss"],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "libs/shared/styles/src/lib"
+              ]
+            },
             "scripts": []
           },
           "configurations": {
@@ -616,7 +621,7 @@
           "options": {
             "commands": [
               {
-                "command": "nx run coljobs-api:build"
+                "command": "nx run coljobs-api:build --with-deps"
               },
               {
                 "command": "firebase use coljobs-db"

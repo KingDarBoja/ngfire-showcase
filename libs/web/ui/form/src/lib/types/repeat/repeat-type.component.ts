@@ -9,7 +9,7 @@ import { FieldArrayType } from '@ngx-formly/core';
     >
       <formly-field class="col-span-10" [field]="field"></formly-field>
       <div class="col-span-2">
-        <button mat-mini-fab color="warn" type="button" (click)="remove(i)">
+        <button mat-icon-button color="warn" type="button" (click)="remove(i)">
           <mat-icon class="material-icons-outlined">delete_forever</mat-icon>
         </button>
       </div>

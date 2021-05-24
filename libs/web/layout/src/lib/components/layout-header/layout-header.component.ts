@@ -4,7 +4,7 @@ import { AuthFacade } from '@ngfire-showcase/auth/data-access';
 @Component({
   selector: 'web-layout-header',
   template: `
-    <mat-toolbar>
+    <mat-toolbar color="primary">
       <section class="container mx-auto flex flex-row md:px-4">
         <span class="font-bold">NG Fire Showcase</span>
         <span class="flex flex-auto"></span>

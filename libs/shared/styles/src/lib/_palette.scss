@@ -1,0 +1,158 @@
+@import "~@angular/material/theming";
+
+// $rosso-corsa: #d00000ff;
+// $selective-yellow: #ffba08ff;
+// $green-blue-crayola: #3f88c5ff;
+// $prussian-blue: #032b43ff;
+// $pine-green: #136f63ff;
+
+/*
+Generated palette via https://coolors.co/d00000-ffba08-3f88c5-032b43-136f63
+and angular mat-palette via http://mcg.mbitson.com/
+*/
+
+$mat-rosso-corsa: (
+  50: #f9e0e0,
+  100: #f1b3b3,
+  200: #e88080,
+  300: #de4d4d,
+  400: #d72626,
+  500: #d00000,
+  600: #cb0000,
+  700: #c40000,
+  800: #be0000,
+  900: #b30000,
+  A100: #ffdcdc,
+  A200: #ffa9a9,
+  A400: #ff7676,
+  A700: #ff5d5d,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  ),
+);
+
+$mat-selective-yellow: (
+  50: #fff7e1,
+  100: #ffeab5,
+  200: #ffdd84,
+  300: #ffcf52,
+  400: #ffc42d,
+  500: #ffba08,
+  600: #ffb307,
+  700: #ffab06,
+  800: #ffa304,
+  900: #ff9402,
+  A100: #ffffff,
+  A200: #fff9f2,
+  A400: #ffe1bf,
+  A700: #ffd5a6,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $dark-primary-text,
+    600: $dark-primary-text,
+    700: $dark-primary-text,
+    800: $dark-primary-text,
+    900: $dark-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  ),
+);
+
+$mat-pine-green: (
+  50: #e3eeec,
+  100: #b8d4d0,
+  200: #89b7b1,
+  300: #5a9a92,
+  400: #36857a,
+  500: #136f63,
+  600: #11675b,
+  700: #0e5c51,
+  800: #0b5247,
+  900: #064035,
+  A100: #76ffe2,
+  A200: #43ffd7,
+  A400: #10ffcc,
+  A700: #00f6c1,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  ),
+);
+
+$mat-prussian-blue: (
+  50: #e6e8ff,
+  100: #bfc7ff,
+  200: #95a1ff,
+  300: #6b7bff,
+  400: #4b5fff,
+  500: #2b43ff,
+  600: #263dff,
+  700: #2034ff,
+  800: #1a2cff,
+  900: #101eff,
+  A100: #ffffff,
+  A200: #f8f8ff,
+  A400: #c5c7ff,
+  A700: #acafff,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  ),
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$main-app-primary: mat-palette($mat-pine-green);
+$main-app-accent: mat-palette($mat-selective-yellow);
+
+// The warn palette is optional (defaults to red).
+$main-app-warn: mat-palette($mat-rosso-corsa);
+
+// Custom Sass colors vars (will be available in all the project)
+$main-primary: mat-color($main-app-primary);
+$main-accent: mat-color($main-app-accent);
+$main-warn: mat-color($main-app-warn);

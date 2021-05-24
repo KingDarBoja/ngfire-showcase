@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'web-layout-footer',
+  styleUrls: ['./layout-footer.component.scss'],
   template: `
-    <footer
-      class="bg-purple-800 text-gray-100 flex justify-center items-center px-4 py-2"
-    >
+    <footer id="app-footer" class="flex justify-center items-center px-4 py-2">
       <ng-content></ng-content>
     </footer>
   `,
