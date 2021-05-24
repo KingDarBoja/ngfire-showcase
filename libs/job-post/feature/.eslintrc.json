@@ -6,7 +6,8 @@
       "files": ["*.ts"],
       "extends": [
         "plugin:@nrwl/nx/angular",
-        "plugin:@angular-eslint/template/process-inline-templates"
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "plugin:ngrx/recommended"
       ],
       "parserOptions": {
         "project": ["libs/job-post/feature-list/tsconfig.*?.json"]
