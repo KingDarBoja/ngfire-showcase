@@ -15,10 +15,11 @@ export class WebUiFormField implements FormlyFieldConfig {
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
-    return this.input(
+    return this.field(
       key,
-      { ...templateOptions, type: 'date' },
-      { ...options }
+      'date',
+      templateOptions,
+      options,
     );
   }
 
@@ -27,10 +28,50 @@ export class WebUiFormField implements FormlyFieldConfig {
     templateOptions?: FormlyTemplateOptions,
     options?: FormlyFieldConfig
   ): FormlyFieldConfig {
-    return this.input(
+    return this.field(
       key,
-      { ...templateOptions, type: 'datetime-local' },
-      { ...options }
+      'datetime',
+      templateOptions,
+      options,
+    );
+  }
+
+  static time<T>(
+    key: FlatBounded<T>,
+    templateOptions?: FormlyTemplateOptions,
+    options?: FormlyFieldConfig
+  ): FormlyFieldConfig {
+    return this.field(
+      key,
+      'time',
+      templateOptions,
+      options,
+    );
+  }
+
+  static year<T>(
+    key: FlatBounded<T>,
+    templateOptions?: FormlyTemplateOptions,
+    options?: FormlyFieldConfig
+  ): FormlyFieldConfig {
+    return this.field(
+      key,
+      'year',
+      templateOptions,
+      options,
+    );
+  }
+
+  static month<T>(
+    key: FlatBounded<T>,
+    templateOptions?: FormlyTemplateOptions,
+    options?: FormlyFieldConfig
+  ): FormlyFieldConfig {
+    return this.field(
+      key,
+      'month',
+      templateOptions,
+      options,
     );
   }
 
@@ -105,6 +146,14 @@ export class WebUiFormField implements FormlyFieldConfig {
     );
   }
 
+  static phone<T>(
+    key: FlatBounded<T>,
+    templateOptions?: FormlyTemplateOptions,
+    options?: FormlyFieldConfig
+  ): FormlyFieldConfig {
+    return this.input(key, { ...templateOptions, type: 'phone' }, options);
+  }
+
   static password<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
@@ -153,17 +202,5 @@ export class WebUiFormField implements FormlyFieldConfig {
 
   static template(template: string): FormlyFieldConfig {
     return { type: 'formly-template', template };
-  }
-
-  static time<T>(
-    key: FlatBounded<T>,
-    templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
-  ): FormlyFieldConfig {
-    return this.input(
-      key,
-      { ...templateOptions, type: 'time' },
-      { ...options }
-    );
   }
 }

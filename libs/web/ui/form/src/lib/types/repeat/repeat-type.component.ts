@@ -1,8 +1,7 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { FieldArrayType } from '@ngx-formly/core';
 
 @Component({
-  selector: 'ngf-form-repeat-section',
   template: `
     <div
       *ngFor="let field of field.fieldGroup; let i = index"
@@ -16,23 +15,10 @@ import { FieldArrayType } from '@ngx-formly/core';
       </div>
     </div>
     <section class="mt-4">
-      <button mat-stroked-button color="primary" type="button" (click)="addEntry()">
+      <button mat-stroked-button color="primary" type="button" (click)="add()">
         {{ to.addText }}
       </button>
     </section>
   `,
 })
-export class RepeatTypeComponent extends FieldArrayType {
-  constructor(private readonly cdRef: ChangeDetectorRef) {
-    super();
-  }
-
-  addEntry(
-    i?: number,
-    initialModel?: never,
-    { markAsDirty } = { markAsDirty: true }
-  ) {
-    this.add(i, initialModel, { markAsDirty });
-    this.cdRef.detectChanges();
-  }
-}
+export class RepeatTypeComponent extends FieldArrayType {}

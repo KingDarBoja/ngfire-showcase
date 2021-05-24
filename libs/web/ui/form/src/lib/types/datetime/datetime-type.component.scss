@@ -1,0 +1,4 @@
+@import "~@matheo/datepicker/theming"; // overrides mat-datepicker-theme
+
+@include mat-core();
+@include angular-material-theme($theme);
