@@ -17,52 +17,52 @@ import { AuthService } from '../auth.service';
 @Injectable()
 export class AuthEffects {
   loginWithEmail$ = createEffect(() =>
-    this.actions$.pipe(
+    { return this.actions$.pipe(
       ofType(loginWithEmail),
       exhaustMap((action) =>
         this.authService.signInWithEmailAndPassword(action).pipe(
           map((authUser) =>
-            authUser ? loginSuccess({ authUser }) : loginFailure()
+            authUser ? loginSuccess({ authUser }) : loginFailure(),
           ),
-          catchError((error) => of(authError({ errorCode: error.code })))
-        )
-      )
-    )
+          catchError((error) => of(authError({ errorCode: error.code }))),
+        ),
+      ),
+    ) },
   );
 
   confirmLogout$ = createEffect(() =>
-    this.actions$.pipe(
+    { return this.actions$.pipe(
       ofType(confirmLogout),
       exhaustMap(() =>
         this.authService.signOut().pipe(
           map(() => logoutConfirmed()),
-          catchError((error) => of(authError({ errorCode: error.code })))
-        )
-      )
-    )
+          catchError((error) => of(authError({ errorCode: error.code }))),
+        ),
+      ),
+    ) },
   );
 
   navigateToDashboard$ = createEffect(
     () =>
-      this.actions$.pipe(
+      { return this.actions$.pipe(
         ofType(loginSuccess),
-        tap(() => this.router.navigateByUrl('/'))
-      ),
-    { dispatch: false }
+        tap(() => this.router.navigateByUrl('/')),
+      ) },
+    { dispatch: false },
   );
 
   navigateToLogin$ = createEffect(
     () =>
-      this.actions$.pipe(
+      { return this.actions$.pipe(
         ofType(logoutConfirmed),
-        tap(() => this.router.navigateByUrl('/login'))
-      ),
-    { dispatch: false }
+        tap(() => this.router.navigateByUrl('/login')),
+      ) },
+    { dispatch: false },
   );
 
   constructor(
     private readonly actions$: Actions,
     private readonly router: Router,
-    private readonly authService: AuthService
+    private readonly authService: AuthService,
   ) {}
 }

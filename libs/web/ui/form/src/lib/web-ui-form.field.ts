@@ -5,7 +5,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static checkbox<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(key, 'checkbox', templateOptions, options);
   }
@@ -13,7 +13,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static date<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(
       key,
@@ -26,7 +26,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static datetime<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(
       key,
@@ -39,7 +39,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static time<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(
       key,
@@ -52,7 +52,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static year<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(
       key,
@@ -65,7 +65,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static month<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(
       key,
@@ -78,7 +78,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static email<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     const defaults = {
       type: 'email',
@@ -88,13 +88,13 @@ export class WebUiFormField implements FormlyFieldConfig {
     return this.input(
       key,
       { ...defaults, ...templateOptions },
-      { ...defaultOptions, ...options }
+      { ...defaultOptions, ...options },
     );
   }
 
   static fieldRow(
     fieldGroup: FormlyFieldConfig[] = [],
-    fieldGroupClassName: string = 'flex'
+    fieldGroupClassName: string = 'flex',
   ): FormlyFieldConfig {
     return {
       fieldGroup,
@@ -106,7 +106,7 @@ export class WebUiFormField implements FormlyFieldConfig {
     key: FlatBounded<T>,
     type?: string,
     templateOptions: FormlyTemplateOptions = {},
-    config: FormlyFieldConfig = {}
+    config: FormlyFieldConfig = {},
   ): FormlyFieldConfig {
     return {
       key,
@@ -121,7 +121,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static input<T>(
     key: FlatBounded<T>,
     templateOptions: FormlyTemplateOptions = {},
-    config: FormlyFieldConfig = {}
+    config: FormlyFieldConfig = {},
   ): FormlyFieldConfig {
     return this.field(key, 'input', templateOptions, config);
   }
@@ -129,7 +129,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static multicheckbox<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(key, 'multicheckbox', templateOptions, options);
   }
@@ -137,19 +137,19 @@ export class WebUiFormField implements FormlyFieldConfig {
   static number<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.input(
       key,
       { ...templateOptions, type: 'number' },
-      { ...options }
+      { ...options },
     );
   }
 
   static phone<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.input(key, { ...templateOptions, type: 'phone' }, options);
   }
@@ -157,7 +157,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static password<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     const defaults = {
       label: 'Password',
@@ -172,7 +172,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static radio<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(key, 'radio', templateOptions, options);
   }
@@ -180,7 +180,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static select<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     return this.field(key, 'select', templateOptions, options);
   }
@@ -188,7 +188,7 @@ export class WebUiFormField implements FormlyFieldConfig {
   static textarea<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
-    options?: FormlyFieldConfig
+    options?: FormlyFieldConfig,
   ): FormlyFieldConfig {
     const defaultTemplateOptions = { rows: 5 };
 
@@ -196,7 +196,7 @@ export class WebUiFormField implements FormlyFieldConfig {
       key,
       'textarea',
       { ...defaultTemplateOptions, ...templateOptions },
-      options
+      options,
     );
   }
 

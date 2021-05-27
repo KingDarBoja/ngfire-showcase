@@ -47,7 +47,7 @@ const authReducer = createReducer(
   })),
   on(logoutConfirmed, (): AuthState => ({
     ...initialState,
-  }))
+  })),
 );
 
 export function reducer(state: AuthState | undefined, action: Action) {

@@ -52,7 +52,7 @@ import { MatCalendarType } from '@matheo/datepicker/lib/calendar.types';
         </button>
       </mat-datepicker-actions>
     </mat-datepicker>
-  `
+  `,
 })
 export class DatetimeComponent extends FieldType implements AfterViewInit {
   @ViewChild(MatDatepickerInput, { static: true }) datepickerInput!: MatDatepickerInput<Date | number>;
@@ -68,10 +68,10 @@ export class DatetimeComponent extends FieldType implements AfterViewInit {
         dateInput: () => {},
         dateChange: () => {},
         monthSelected: () => {},
-        yearSelected: () => {}
+        yearSelected: () => {},
         /* eslint-enable @typescript-eslint/no-empty-function */
-      }
-    }
+      },
+    },
   };
 
   get type(): MatCalendarType {

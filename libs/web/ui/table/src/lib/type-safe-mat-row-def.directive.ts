@@ -19,7 +19,7 @@ export class TypeSafeMatRowDefDirective<T> extends MatRowDef<T> {
 
   static ngTemplateContextGuard<T>(
     dir: TypeSafeMatRowDefDirective<T>,
-    ctx: unknown
+    ctx: unknown,
   ): ctx is { $implicit: T; index: number } {
     return true;
   }

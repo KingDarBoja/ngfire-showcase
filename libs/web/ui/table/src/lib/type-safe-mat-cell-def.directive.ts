@@ -19,7 +19,7 @@ export class TypeSafeMatCellDefDirective<T> extends MatCellDef {
 
   static ngTemplateContextGuard<T>(
     dir: TypeSafeMatCellDefDirective<T>,
-    ctx: unknown
+    ctx: unknown,
   ): ctx is { $implicit: T; index: number } {
     return true;
   }

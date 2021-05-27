@@ -6,7 +6,7 @@ import {
 
 export const InlineScopeLoader = (
   importer: (lang: DefaultAvailableLangs, root: string) => Promise<Translation>,
-  root = 'i18n'
+  root = 'i18n',
 ) => {
   return DEFAULT_AVAILABLE_LANGS.reduce((acc, lang) => {
     acc[lang.id] = () => importer(lang.id, root);

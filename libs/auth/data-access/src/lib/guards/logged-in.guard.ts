@@ -12,7 +12,7 @@ export class LoggedInGuard implements CanActivate {
   constructor(
     private readonly store: Store,
     private readonly router: Router,
-    private readonly authService: AuthService
+    private readonly authService: AuthService,
   ) {}
 
   hasAuthInStore(): Observable<boolean> {
@@ -26,21 +26,21 @@ export class LoggedInGuard implements CanActivate {
       catchError(() => {
         this.router.navigate(['/login']);
         return of(false);
-      })
+      }),
     );
   }
 
   hasAuth() {
     return this.hasAuthInStore().pipe(
-      switchMap((inStore) => (inStore ? of(inStore) : this.hasAuthInApi()))
+      switchMap((inStore) => (inStore ? of(inStore) : this.hasAuthInApi())),
     );
   }
 
   canActivate(): Observable<boolean | UrlTree> {
     return this.hasAuth().pipe(
       map((loggedIn) =>
-        loggedIn ? true : this.router.createUrlTree(['/login'])
-      )
+        loggedIn ? true : this.router.createUrlTree(['/login']),
+      ),
     );
   }
 }

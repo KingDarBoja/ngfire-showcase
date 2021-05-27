@@ -3,19 +3,19 @@ import { AuthUserEntity } from './auth.models';
 
 export const authError = createAction(
   '[Auth] Error',
-  props<{ errorCode: string }>()
+  props<{ errorCode: string }>(),
 );
 export const loginWithEmail = createAction(
   '[Auth] Login With Email',
-  props<{ email: string; password: string }>()
+  props<{ email: string; password: string }>(),
 );
 export const loadAuthFromApi = createAction(
   '[Auth] Load Auth From API',
-  props<{ authUser: AuthUserEntity | null }>()
+  props<{ authUser: AuthUserEntity | null }>(),
 );
 export const loginSuccess = createAction(
   '[Auth] Authenticated',
-  props<{ authUser: AuthUserEntity }>()
+  props<{ authUser: AuthUserEntity }>(),
 );
 export const loginFailure = createAction('[Auth] Not Authenticated');
 export const confirmLogout = createAction('[Auth] Confirm Logout');

@@ -13,7 +13,7 @@ import { AuthUserEntity } from '..';
 @Injectable()
 export class AuthService {
   readonly authState: Observable<AuthUserEntity | null> = this.afAuth.user.pipe(
-    map((user) => this.mapAuthUserToEntity(user))
+    map((user) => this.mapAuthUserToEntity(user)),
   );
 
   constructor(private readonly afAuth: AngularFireAuth) {}
@@ -47,9 +47,12 @@ export class AuthService {
       map(({ user }: AuthUserCredential) => this.mapAuthUserToEntity(user)),
       catchError((err: FirebaseAuthError) =>
         throwError(
-          new FirebaseAuthError(this.normalizeLoginError(err.code), err.message)
-        )
-      )
+          new FirebaseAuthError(
+            this.normalizeLoginError(err.code),
+            err.message,
+          ),
+        ),
+      ),
     );
   }
 

@@ -10,7 +10,7 @@ import {
     CommonModule,
     SharedConfigTranslocoModule.forChild(
       'auth',
-      InlineScopeLoader((lang, root) => import(`./${root}/${lang}.json`))
+      InlineScopeLoader((lang, root) => import(`./${root}/${lang}.json`)),
     ),
   ],
   exports: [SharedConfigTranslocoModule],

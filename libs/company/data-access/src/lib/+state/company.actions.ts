@@ -6,5 +6,5 @@ export const navigatedToCompanies = createAction(
 );
 export const companiesChanged = createAction(
   '[Company List] Companies Changed',
-  props<{ companies: ReadonlyArray<CompanyEntity> }>()
+  props<{ companies: ReadonlyArray<CompanyEntity> }>(),
 );

@@ -44,7 +44,7 @@ export type DefaultAvailableLangs = typeof DEFAULT_AVAILABLE_LANGS[number]['id']
 export class SharedConfigTranslocoModule {
   static forRoot(
     prodMode: boolean,
-    availableLangs: ReadonlyArray<AvailableLang> = DEFAULT_AVAILABLE_LANGS
+    availableLangs: ReadonlyArray<AvailableLang> = DEFAULT_AVAILABLE_LANGS,
   ): ModuleWithProviders<SharedConfigTranslocoModule> {
     return {
       ngModule: SharedConfigTranslocoModule,
@@ -71,7 +71,7 @@ export class SharedConfigTranslocoModule {
 
   static forChild(
     scopeName: string,
-    scopeLoader: InlineLoader
+    scopeLoader: InlineLoader,
   ): ModuleWithProviders<SharedConfigTranslocoModule> {
     return {
       ngModule: SharedConfigTranslocoModule,

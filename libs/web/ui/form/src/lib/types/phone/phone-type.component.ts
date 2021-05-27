@@ -23,7 +23,7 @@ import { FieldType } from '@ngx-formly/material/form-field';
       [tabIndex]="to.tabindex"
       [placeholder]="placeholderOpt"
     />
-  `
+  `,
 })
 export class PhoneTypeComponent extends FieldType {
   @ViewChild(MatInput) formFieldControl!: MatInput;

@@ -57,7 +57,7 @@ export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>>
     // },
     fromFirestore: (
       snapshot: QueryDocumentSnapshot<T>,
-      options: SnapshotOptions
+      options: SnapshotOptions,
     ): T => {
       return { ...snapshot.data(options) };
     },
@@ -81,12 +81,12 @@ export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>>
         tap((res) => {
           if (!environment.production) {
             console.groupCollapsed(
-              `Firestore Streaming [${this.basePath}] [doc$] ${id}`
+              `Firestore Streaming [${this.basePath}] [doc$] ${id}`,
             );
             console.log(res);
             console.groupEnd();
           }
-        })
+        }),
       );
   }
 
@@ -101,17 +101,17 @@ export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>>
         map((docSnapshots) =>
           docSnapshots.map((docSnapshot) => {
             return this.getDataWithId(docSnapshot.payload.doc);
-          })
+          }),
         ),
         tap((res) => {
           if (!environment.production) {
             console.groupCollapsed(
-              `Firestore Streaming [${this.basePath}] [collection$]`
+              `Firestore Streaming [${this.basePath}] [collection$]`,
             );
             console.table(res);
             console.groupEnd();
           }
-        })
+        }),
       );
   }
 
@@ -120,12 +120,12 @@ export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>>
       tap((id) => {
         if (!environment.production) {
           console.groupCollapsed(
-            `Firestore Service [${this.basePath}] [create]`
+            `Firestore Service [${this.basePath}] [create]`,
           );
           console.log('[Id]', id, value);
           console.groupEnd();
         }
-      })
+      }),
     );
   }
 
@@ -138,12 +138,12 @@ export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>>
       tap(() => {
         if (!environment.production) {
           console.groupCollapsed(
-            `Firestore Service [${this.basePath}] [delete]`
+            `Firestore Service [${this.basePath}] [delete]`,
           );
           console.log('[Id]', id);
           console.groupEnd();
         }
-      })
+      }),
     );
   }
 
@@ -188,7 +188,7 @@ export abstract class FirestoreService<T extends Partial<FirestoreIdentifier>>
   private docSet(
     id: string,
     value: T,
-    setOptions?: SetOptions
+    setOptions?: SetOptions,
   ): Observable<string> {
     setOptions = setOptions || { merge: true };
 

@@ -22,14 +22,28 @@
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
-    },
-    {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
+    },
+    {
+      "files": ["*.ts", "*.tsx"],
+      "extends": ["plugin:@nrwl/nx/typescript"],
+      "rules": {
+        "comma-dangle": "off",
+        "@typescript-eslint/comma-dangle": [
+          "error",
+          {
+            "enums": "always-multiline",
+            "tuples": "always-multiline",
+            "arrays": "always-multiline",
+            "objects": "always-multiline",
+            "functions": "always-multiline",
+            "imports": "always-multiline",
+            "exports": "always-multiline"
+          }
+        ]
+      }
     }
   ]
 }

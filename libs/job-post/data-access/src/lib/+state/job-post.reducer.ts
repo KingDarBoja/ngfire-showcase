@@ -22,15 +22,15 @@ const jobPostReducer = createReducer(
     (state, { searchParams }): JobPostState => ({
       ...state,
       searchParams,
-    })
+    }),
   ),
   on(
     jobPostsChanged,
     (state, { jobPosts }): JobPostState => ({
       ...state,
       jobPosts,
-    })
-  )
+    }),
+  ),
 );
 
 export function reducer(state: JobPostState | undefined, action: Action) {

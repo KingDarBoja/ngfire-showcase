@@ -19,7 +19,7 @@ const companyReducer = createReducer(
   on(companiesChanged, (state, { companies }): CompanyState => ({
     ...state,
     companies,
-  }))
+  })),
 );
 
 export function reducer(state: CompanyState | undefined, action: Action) {

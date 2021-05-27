@@ -26,7 +26,7 @@ export class JobPostEffects {
         companyId,
       })),
       // Dispatch action that the search params changed.
-      map((searchParams) => searchParamsChanged({ searchParams }))
+      map((searchParams) => searchParamsChanged({ searchParams })),
     );
   });
 
@@ -41,7 +41,7 @@ export class JobPostEffects {
         countryId,
       })),
       // Dispatch action that the search params changed.
-      map((searchParams) => searchParamsChanged({ searchParams }))
+      map((searchParams) => searchParamsChanged({ searchParams })),
     );
   });
 
@@ -52,7 +52,7 @@ export class JobPostEffects {
         let colQuery$ = this.jobPostFS.collection$();
         if (searchParams?.companyId !== undefined) {
           colQuery$ = this.jobPostFS.collection$((ref) =>
-            ref.where('companyId', '==', searchParams.companyId)
+            ref.where('companyId', '==', searchParams.companyId),
           );
         }
         return colQuery$.pipe(
@@ -60,15 +60,15 @@ export class JobPostEffects {
           catchError((err) => {
             console.error(err);
             return EMPTY;
-          })
+          }),
         );
-      })
+      }),
     );
   });
 
   constructor(
     private actions$: Actions,
     private store: Store,
-    private readonly jobPostFS: JobPostFirestoreService
+    private readonly jobPostFS: JobPostFirestoreService,
   ) {}
 }

@@ -5,7 +5,7 @@ import { WebUiFormField } from '@ngfire-showcase/web/ui/form';
 @Component({
   selector: 'ngfire-showcase-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent {
   readonly vm$ = this.authFacade.getAuthState$;

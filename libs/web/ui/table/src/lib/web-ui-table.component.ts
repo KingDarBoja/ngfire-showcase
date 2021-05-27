@@ -46,7 +46,7 @@ export class WebUiTableComponent<T = unknown> {
   };
   private _selection = new SelectionModel<T>(
     this._config.allowMultiSelect,
-    this._config.initialSelection
+    this._config.initialSelection,
   );
 
   get dataSource(): MatTableDataSource<T> {

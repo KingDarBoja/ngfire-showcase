@@ -62,12 +62,12 @@ interface SharedDataAccessFirebaseConfig {
     settings?: firebase.firestore.Settings;
     enablePersistence?: boolean;
     persistenceSettings?: firebase.firestore.PersistenceSettings;
-  },
+  };
   functionsConfig?: {
     newOriginBehavior?: boolean;
     origin?: string;
     region?: string;
-  }
+  };
   useEmulators?: boolean;
 }
 
@@ -87,7 +87,7 @@ export class SharedDataAccessRootFirebaseModule {}
 @NgModule({})
 export class SharedDataAccessFirebaseModule {
   static forRoot(
-    config: SharedDataAccessFirebaseConfig
+    config: SharedDataAccessFirebaseConfig,
   ): ModuleWithProviders<SharedDataAccessRootFirebaseModule> {
     return {
       ngModule: SharedDataAccessRootFirebaseModule,

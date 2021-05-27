@@ -6,10 +6,10 @@ export const getAuthState = createFeatureSelector<AuthState>(AUTH_FEATURE_KEY);
 
 export const isLoggedIn = createSelector(
   getAuthState,
-  (state) => !!state.authUser
+  (state) => !!state.authUser,
 );
 
 export const getAuthUser = createSelector(
   getAuthState,
-  (state: AuthState) => state.authUser
+  (state: AuthState) => state.authUser,
 );

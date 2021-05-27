@@ -12,7 +12,7 @@ export class LoginGuard implements CanActivate {
   constructor(
     private readonly store: Store,
     private readonly router: Router,
-    private readonly authService: AuthService
+    private readonly authService: AuthService,
   ) {}
 
   hasAuthInStore(): Observable<boolean> {
@@ -23,19 +23,19 @@ export class LoginGuard implements CanActivate {
     return this.authService.authState.pipe(
       tap((authUser) => this.store.dispatch(loadAuthFromApi({ authUser }))),
       map((authUser) => !!authUser),
-      catchError(() => of(true))
+      catchError(() => of(true)),
     );
   }
 
   hasAuth() {
     return this.hasAuthInStore().pipe(
-      switchMap((inStore) => (inStore ? of(inStore) : this.hasAuthInApi()))
+      switchMap((inStore) => (inStore ? of(inStore) : this.hasAuthInApi())),
     );
   }
 
   canActivate(): Observable<boolean | UrlTree> {
     return this.hasAuth().pipe(
-      map((loggedIn) => (loggedIn ? this.router.createUrlTree(['/']) : true))
+      map((loggedIn) => (loggedIn ? this.router.createUrlTree(['/']) : true)),
     );
   }
 }

@@ -17,14 +17,14 @@ export class CompanyEffects {
           catchError((err) => {
             console.error(err);
             return EMPTY;
-          })
-        )
-      )
+          }),
+        ),
+      ),
     );
   });
 
   constructor(
     private actions$: Actions,
-    private readonly companyFS: CompanyFirestoreService
+    private readonly companyFS: CompanyFirestoreService,
   ) {}
 }

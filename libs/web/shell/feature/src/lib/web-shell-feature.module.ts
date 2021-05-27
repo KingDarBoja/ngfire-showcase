@@ -33,14 +33,14 @@ const routes: Routes = [
         path: 'company',
         loadChildren: () =>
           import('@ngfire-showcase/company/feature').then(
-            (m) => m.CompanyFeatureModule
+            (m) => m.CompanyFeatureModule,
           ),
       },
       {
         path: 'jobs',
         loadChildren: () =>
           import('@ngfire-showcase/job-post/feature').then(
-            (m) => m.JobPostFeatureModule
+            (m) => m.JobPostFeatureModule,
           ),
       },
       {
