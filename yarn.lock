@@ -6928,10 +6928,10 @@ eslint-plugin-cypress@^2.10.3:
   dependencies:
     globals "^11.12.0"
 
-eslint-plugin-ngrx@^1.23.0:
-  version "1.23.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-ngrx/-/eslint-plugin-ngrx-1.23.0.tgz#8a8073bd189cbcf51d2e2b2c1fc6a1a3de64fa42"
-  integrity sha512-i63t8qYcy3b0TKxfaVY9nIbT/GMZqKogRa/iJ2YR//l9feaerv6TX/IIGo/3rX1WXutV/foIXO1RGfJ/p55uDw==
+eslint-plugin-ngrx@1.24.0:
+  version "1.24.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-ngrx/-/eslint-plugin-ngrx-1.24.0.tgz#14fbec315f453578a99ab38b257878002d814ac0"
+  integrity sha512-+RunqrPGETrnuDeuFfzSH5kAx7ZgtrZT/FRGDAQxXEeT0VHwwQhmy1NQTTZcNL9/wpRwBH+vtZrAUikMwf12qw==
   dependencies:
     "@angular-devkit/schematics" "^11.0.1"
     "@typescript-eslint/experimental-utils" "^4.7.0"
@@ -16216,14 +16216,14 @@ zip-stream@^4.1.0:
     compress-commons "^4.1.0"
     readable-stream "^3.6.0"
 
-zone.js@0.11.4:
+zone.js@~0.10.3:
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.10.3.tgz#3e5e4da03c607c9dcd92e37dd35687a14a140c16"
+  integrity sha512-LXVLVEq0NNOqK/fLJo3d0kfzd4sxwn2/h67/02pjCjfKDxgx1i9QqpvtHD8CrBnSSwMw5+dy11O7FRX5mkO7Cg==
+
+zone.js@~0.11.4:
   version "0.11.4"
   resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.11.4.tgz#0f70dcf6aba80f698af5735cbb257969396e8025"
   integrity sha512-DDh2Ab+A/B+9mJyajPjHFPWfYU1H+pdun4wnnk0OcQTNjem1XQSZ2CDW+rfZEUDjv5M19SBqAkjZi0x5wuB5Qw==
   dependencies:
     tslib "^2.0.0"
-
-zone.js@~0.10.3:
-  version "0.10.3"
-  resolved "https://registry.yarnpkg.com/zone.js/-/zone.js-0.10.3.tgz#3e5e4da03c607c9dcd92e37dd35687a14a140c16"
-  integrity sha512-LXVLVEq0NNOqK/fLJo3d0kfzd4sxwn2/h67/02pjCjfKDxgx1i9QqpvtHD8CrBnSSwMw5+dy11O7FRX5mkO7Cg==
