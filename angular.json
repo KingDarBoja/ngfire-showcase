@@ -48,7 +48,6 @@
             "main": "apps/coljobs/src/main.ts",
             "polyfills": "apps/coljobs/src/polyfills.ts",
             "tsConfig": "apps/coljobs/tsconfig.app.json",
-            "aot": true,
             "assets": [
               {
                 "glob": "favicon.ico",
@@ -61,13 +60,21 @@
                 "output": "assets"
               }
             ],
-            "styles": ["libs/shared/styles/src/index.scss"],
+            "styles": [
+              "libs/shared/styles/src/index.scss"
+            ],
             "stylePreprocessorOptions": {
               "includePaths": [
                 "libs/shared/styles/src/lib"
               ]
             },
-            "scripts": []
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -146,7 +153,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/coljobs"],
+          "outputs": [
+            "coverage/apps/coljobs"
+          ],
           "options": {
             "jestConfig": "apps/coljobs/jest.config.js",
             "passWithNoTests": true
@@ -179,7 +188,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/coljobs-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/coljobs-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -201,7 +212,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/ui/form"],
+          "outputs": [
+            "coverage/libs/web/ui/form"
+          ],
           "options": {
             "jestConfig": "libs/web/ui/form/jest.config.js",
             "passWithNoTests": true
@@ -226,7 +239,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/util/sdk"],
+          "outputs": [
+            "coverage/libs/shared/util/sdk"
+          ],
           "options": {
             "jestConfig": "libs/shared/util/sdk/jest.config.js",
             "passWithNoTests": true
@@ -251,7 +266,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/shell/feature"],
+          "outputs": [
+            "coverage/libs/web/shell/feature"
+          ],
           "options": {
             "jestConfig": "libs/web/shell/feature/jest.config.js",
             "passWithNoTests": true
@@ -276,7 +293,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/layout"],
+          "outputs": [
+            "coverage/libs/web/layout"
+          ],
           "options": {
             "jestConfig": "libs/web/layout/jest.config.js",
             "passWithNoTests": true
@@ -301,7 +320,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/web/ui/table"],
+          "outputs": [
+            "coverage/libs/web/ui/table"
+          ],
           "options": {
             "jestConfig": "libs/web/ui/table/jest.config.js",
             "passWithNoTests": true
@@ -326,7 +347,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/company/data-access"],
+          "outputs": [
+            "coverage/libs/company/data-access"
+          ],
           "options": {
             "jestConfig": "libs/company/data-access/jest.config.js",
             "passWithNoTests": true
@@ -351,7 +374,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/job-post/data-access"],
+          "outputs": [
+            "coverage/libs/job-post/data-access"
+          ],
           "options": {
             "jestConfig": "libs/job-post/data-access/jest.config.js",
             "passWithNoTests": true
@@ -376,7 +401,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/company/feature"],
+          "outputs": [
+            "coverage/libs/company/feature"
+          ],
           "options": {
             "jestConfig": "libs/company/feature/jest.config.js",
             "passWithNoTests": true
@@ -401,7 +428,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/job-post/feature"],
+          "outputs": [
+            "coverage/libs/job-post/feature"
+          ],
           "options": {
             "jestConfig": "libs/job-post/feature/jest.config.js",
             "passWithNoTests": true
@@ -426,7 +455,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/config-transloco"],
+          "outputs": [
+            "coverage/libs/shared/config-transloco"
+          ],
           "options": {
             "jestConfig": "libs/shared/config-transloco/jest.config.js",
             "passWithNoTests": true
@@ -451,7 +482,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/config-firebase"],
+          "outputs": [
+            "coverage/libs/shared/config-firebase"
+          ],
           "options": {
             "jestConfig": "libs/shared/config-firebase/jest.config.js",
             "passWithNoTests": true
@@ -476,7 +509,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/config-environments"],
+          "outputs": [
+            "coverage/libs/shared/config-environments"
+          ],
           "options": {
             "jestConfig": "libs/shared/config-environments/jest.config.js",
             "passWithNoTests": true
@@ -501,7 +536,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/auth/data-access"],
+          "outputs": [
+            "coverage/libs/auth/data-access"
+          ],
           "options": {
             "jestConfig": "libs/auth/data-access/jest.config.js",
             "passWithNoTests": true
@@ -526,7 +563,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/auth/feature"],
+          "outputs": [
+            "coverage/libs/auth/feature"
+          ],
           "options": {
             "jestConfig": "libs/auth/feature/jest.config.js",
             "passWithNoTests": true
@@ -551,7 +590,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/auth/ui"],
+          "outputs": [
+            "coverage/libs/auth/ui"
+          ],
           "options": {
             "jestConfig": "libs/auth/ui/jest.config.js",
             "passWithNoTests": true
@@ -581,12 +622,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/util/data-structures/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/util/data-structures/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/util/data-structures"],
+          "outputs": [
+            "coverage/libs/shared/util/data-structures"
+          ],
           "options": {
             "jestConfig": "libs/shared/util/data-structures/jest.config.js",
             "passWithNoTests": true
@@ -601,17 +646,21 @@
       "architect": {
         "build": {
           "builder": "@simondotm/nx-firebase:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/coljobs-api",
             "main": "apps/coljobs-api/src/index.ts",
             "tsConfig": "apps/coljobs-api/tsconfig.app.json",
             "packageJson": "apps/coljobs-api/package.json",
-            "assets": ["apps/coljobs-api/*.md"]
+            "assets": [
+              "apps/coljobs-api/*.md"
+            ]
           }
         },
         "serve": {
-          "executor": "@nrwl/workspace:run-commands",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
             "commands": [
               {
@@ -625,7 +674,7 @@
           }
         },
         "deploy": {
-          "executor": "@nrwl/workspace:run-commands",
+          "builder": "@nrwl/workspace:run-commands",
           "options": {
             "command": "firebase deploy --config firebase.coljobs-api.json"
           }
@@ -633,12 +682,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/coljobs-api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/coljobs-api/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/coljobs-api"],
+          "outputs": [
+            "coverage/apps/coljobs-api"
+          ],
           "options": {
             "jestConfig": "apps/coljobs-api/jest.config.js",
             "passWithNoTests": true
@@ -653,24 +706,32 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/libs/company/domain",
             "tsConfig": "libs/company/domain/tsconfig.lib.json",
             "packageJson": "libs/company/domain/package.json",
             "main": "libs/company/domain/src/index.ts",
-            "assets": ["libs/company/domain/*.md"]
+            "assets": [
+              "libs/company/domain/*.md"
+            ]
           }
         },
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/company/domain/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/company/domain/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/company/domain"],
+          "outputs": [
+            "coverage/libs/company/domain"
+          ],
           "options": {
             "jestConfig": "libs/company/domain/jest.config.js",
             "passWithNoTests": true
