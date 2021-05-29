@@ -1,4 +1,4 @@
-@import "~@angular/material/theming";
+@use "~@angular/material/theming" as theme;
 
 // $rosso-corsa: #d00000ff;
 // $selective-yellow: #ffba08ff;
@@ -27,20 +27,20 @@ $mat-rosso-corsa: (
   A400: #ff7676,
   A700: #ff5d5d,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $light-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $dark-primary-text,
-    A400: $dark-primary-text,
-    A700: $dark-primary-text,
+    50: theme.$dark-primary-text,
+    100: theme.$dark-primary-text,
+    200: theme.$dark-primary-text,
+    300: theme.$light-primary-text,
+    400: theme.$light-primary-text,
+    500: theme.$light-primary-text,
+    600: theme.$light-primary-text,
+    700: theme.$light-primary-text,
+    800: theme.$light-primary-text,
+    900: theme.$light-primary-text,
+    A100: theme.$dark-primary-text,
+    A200: theme.$dark-primary-text,
+    A400: theme.$dark-primary-text,
+    A700: theme.$dark-primary-text,
   ),
 );
 
@@ -60,20 +60,20 @@ $mat-selective-yellow: (
   A400: #ffe1bf,
   A700: #ffd5a6,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $dark-primary-text,
-    500: $dark-primary-text,
-    600: $dark-primary-text,
-    700: $dark-primary-text,
-    800: $dark-primary-text,
-    900: $dark-primary-text,
-    A100: $dark-primary-text,
-    A200: $dark-primary-text,
-    A400: $dark-primary-text,
-    A700: $dark-primary-text,
+    50: theme.$dark-primary-text,
+    100: theme.$dark-primary-text,
+    200: theme.$dark-primary-text,
+    300: theme.$dark-primary-text,
+    400: theme.$dark-primary-text,
+    500: theme.$dark-primary-text,
+    600: theme.$dark-primary-text,
+    700: theme.$dark-primary-text,
+    800: theme.$dark-primary-text,
+    900: theme.$dark-primary-text,
+    A100: theme.$dark-primary-text,
+    A200: theme.$dark-primary-text,
+    A400: theme.$dark-primary-text,
+    A700: theme.$dark-primary-text,
   ),
 );
 
@@ -93,20 +93,20 @@ $mat-pine-green: (
   A400: #10ffcc,
   A700: #00f6c1,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $dark-primary-text,
-    A400: $dark-primary-text,
-    A700: $dark-primary-text,
+    50: theme.$dark-primary-text,
+    100: theme.$dark-primary-text,
+    200: theme.$dark-primary-text,
+    300: theme.$dark-primary-text,
+    400: theme.$light-primary-text,
+    500: theme.$light-primary-text,
+    600: theme.$light-primary-text,
+    700: theme.$light-primary-text,
+    800: theme.$light-primary-text,
+    900: theme.$light-primary-text,
+    A100: theme.$dark-primary-text,
+    A200: theme.$dark-primary-text,
+    A400: theme.$dark-primary-text,
+    A700: theme.$dark-primary-text,
   ),
 );
 
@@ -126,33 +126,19 @@ $mat-prussian-blue: (
   A400: #c5c7ff,
   A700: #acafff,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $dark-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $dark-primary-text,
-    A400: $dark-primary-text,
-    A700: $dark-primary-text,
+    50: theme.$dark-primary-text,
+    100: theme.$dark-primary-text,
+    200: theme.$dark-primary-text,
+    300: theme.$dark-primary-text,
+    400: theme.$light-primary-text,
+    500: theme.$light-primary-text,
+    600: theme.$light-primary-text,
+    700: theme.$light-primary-text,
+    800: theme.$light-primary-text,
+    900: theme.$light-primary-text,
+    A100: theme.$dark-primary-text,
+    A200: theme.$dark-primary-text,
+    A400: theme.$dark-primary-text,
+    A700: theme.$dark-primary-text,
   ),
 );
-
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$main-app-primary: mat-palette($mat-pine-green);
-$main-app-accent: mat-palette($mat-selective-yellow);
-
-// The warn palette is optional (defaults to red).
-$main-app-warn: mat-palette($mat-rosso-corsa);
-
-// Custom Sass colors vars (will be available in all the project)
-$main-primary: mat-color($main-app-primary);
-$main-accent: mat-color($main-app-accent);
-$main-warn: mat-color($main-app-warn);

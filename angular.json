@@ -63,11 +63,6 @@
             "styles": [
               "libs/shared/styles/src/index.scss"
             ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "libs/shared/styles/src/lib"
-              ]
-            },
             "scripts": [],
             "vendorChunk": true,
             "extractLicenses": false,

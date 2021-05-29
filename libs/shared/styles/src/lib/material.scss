@@ -1,0 +1,48 @@
+@use '~@angular/material' as mat;
+@use 'palette' as palette;
+@use 'app-theme';
+@use 'typography' as typography;
+// overrides mat-datepicker-theme
+@use "~@matheo/datepicker/theming" as datepicker;
+
+// Constructing the theme first requires defining your primary and accent
+// palettes, with an optional warn palette. The define-palette Sass function
+// accepts a color palette, as well as four optional hue numbers. These four
+// hues represent, in order: the "default" hue, a "lighter" hue, a "darker" hue,
+// and a "text" hue. Components use these hues to choose the most appropriate
+// color for different parts of themselves.
+
+$main-primary: mat.define-palette(palette.$mat-pine-green);
+$main-accent: mat.define-palette(palette.$mat-selective-yellow);
+
+// The "warn" palette is optional and defaults to red if not specified.
+$main-warn: mat.define-palette(palette.$mat-rosso-corsa);
+
+// You can construct a theme by calling either define-light-theme or
+// define-dark-theme with the result from define-palette. The choice of a light
+// versus a dark theme determines the background and foreground colors used
+// throughout the components.
+$main-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $main-primary,
+      accent: $main-accent,
+      warn: $main-warn,
+    ),
+    typography: typography.$rubik-typography,
+  )
+);
+
+// Include material core styles.
+@include mat.core();
+
+// As an alternative to listing every component that your application uses,
+// Angular Material offers Sass mixins that includes styles for all components
+// in the library: all-component-colors, all-component-typographies, and
+// all-component-themes. These mixins behave the same as individual component
+// mixins, except they emit styles for core-theme and all 35+ components in
+// Angular Material. Unless your application uses every single component, this
+// will produce unecessary CSS.
+@include datepicker.mat-datepicker-theme($main_theme);
+@include mat.all-component-themes($main_theme);
+@include app-theme.theme($main_theme);

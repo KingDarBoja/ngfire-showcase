@@ -1,0 +1,7 @@
+// @use '~@angular/material' as mat;
+@use './footer-theme' as footer;
+
+// Styles for the docs app that are based on the current theme.
+@mixin theme($theme) {
+  @include footer.theme($theme);
+}

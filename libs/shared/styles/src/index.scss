@@ -2,6 +2,8 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 /* You can add global styles to this file, and also import other style files */
-@import "./lib/theming";
-@import "./lib/typography";
-@import "./lib/global";
+@import "./lib/material";
+@import "./lib/general";
+
+// Load from npm package the v4.0.0 material icons.
+@import "material-icons/iconfont/material-icons.css";

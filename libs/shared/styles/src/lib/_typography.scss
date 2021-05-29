@@ -1,4 +1,4 @@
-@import "~@angular/material/theming";
+@use '~@angular/material' as mat;
 
 @font-face {
   font-family: Rubik;
@@ -112,9 +112,6 @@
   font-display: swap;
 }
 
-$rubik-typography: mat-typography-config(
+$rubik-typography: mat.define-typography-config(
   $font-family: "Rubik, sans-serif",
 );
-
-// Override the typography in the core CSS.
-@include mat-core($rubik-typography);
