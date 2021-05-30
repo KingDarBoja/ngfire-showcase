@@ -16,7 +16,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "ngfire-showcase",
+            "prefix": "ngf-shell",
             "style": "camelCase"
           }
         ],
@@ -24,7 +24,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "ngfire-showcase",
+            "prefix": "ngf-shell",
             "style": "kebab-case"
           }
         ]
