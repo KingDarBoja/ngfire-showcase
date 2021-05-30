@@ -4,6 +4,7 @@
   "overrides": [
     {
       "files": ["*.ts"],
+      "plugins": ["ngrx"],
       "extends": [
         "plugin:@nrwl/nx/angular",
         "plugin:@angular-eslint/template/process-inline-templates",
