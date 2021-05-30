@@ -1,5 +1,5 @@
 {
-  "extends": "../../../.eslintrc.json",
+  "extends": ["../../../.eslintrc.json"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -11,7 +11,7 @@
         "plugin:ngrx/recommended"
       ],
       "parserOptions": {
-        "project": ["libs/job-post/feature-list/tsconfig.*?.json"]
+        "project": ["libs/job-post/feature/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [

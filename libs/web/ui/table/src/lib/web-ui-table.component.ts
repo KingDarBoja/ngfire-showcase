@@ -22,7 +22,7 @@ import { SelectionModel } from '@angular/cdk/collections';
       <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
       <mat-row
         *matRowDef="let row; columns: columns"
-        [ngStyle]="{ 'mat-row-selected': selectedRows.indexOf(row) != -1 }"
+        [ngStyle]="{ 'mat-row-selected': selectedRows.indexOf(row) !== -1 }"
         (click)="toggleRowSelection(row)"
       ></mat-row>
     </mat-table>

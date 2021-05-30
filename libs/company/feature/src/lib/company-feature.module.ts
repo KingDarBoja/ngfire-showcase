@@ -6,14 +6,14 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./company-list/company-list.module').then(
-        (m) => m.CompanyListModule
+        (m) => m.CompanyListModule,
       ),
   },
   {
     path: ':companyId',
     loadChildren: () =>
       import('./company-detail/company-detail.module').then(
-        (m) => m.CompanyDetailModule
+        (m) => m.CompanyDetailModule,
       ),
   },
 ];

@@ -25,7 +25,7 @@ export class CompanyListComponent {
 
   constructor(
     private readonly companyFacade: CompanyFacade,
-    private readonly dialog: MatDialog
+    private readonly dialog: MatDialog,
   ) {}
 
   addCompany() {

@@ -69,7 +69,7 @@ export class AddCompanyDialogComponent {
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public readonly data: CompanyEntity,
-    private readonly dialogRef: MatDialogRef<AddCompanyDialogComponent>
+    private readonly dialogRef: MatDialogRef<AddCompanyDialogComponent>,
   ) {}
 
   onCancel(): void {

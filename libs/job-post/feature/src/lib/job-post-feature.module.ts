@@ -6,7 +6,7 @@ const routes: Routes = [
     path: '',
     loadChildren: () =>
       import('./job-post-list/job-post-list.module').then(
-        (m) => m.JobPostListModule
+        (m) => m.JobPostListModule,
       ),
   },
 ];

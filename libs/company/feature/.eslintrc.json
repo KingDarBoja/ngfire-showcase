@@ -11,7 +11,7 @@
         "plugin:ngrx/recommended"
       ],
       "parserOptions": {
-        "project": ["libs/company/feature-list/tsconfig.*?.json"]
+        "project": ["libs/company/feature/tsconfig.*?.json"]
       },
       "rules": {
         "@angular-eslint/directive-selector": [
