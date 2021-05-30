@@ -51,7 +51,7 @@
       "@ngfire-showcase/shared/util/data-structures": [
         "libs/shared/util/data-structures/src/index.ts"
       ],
-      "@ngfire-showcase/company/domain": ["libs/company/domain/src/index.ts"]
+      "@ngfire-showcase/company-domain": ["libs/company/domain/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

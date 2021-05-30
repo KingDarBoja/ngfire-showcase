@@ -1,5 +1,5 @@
 import { https, logger } from 'firebase-functions';
-import { CompanyEntity } from '@ngfire-showcase/company/domain';
+import { CompanyEntity } from '@ngfire-showcase/company-domain';
 
 export const createCompany = https.onCall(createCompanyCF);
 

@@ -1,1 +1,1 @@
-export { CompanyEntity, AddressEntity } from '@ngfire-showcase/company/domain';
+export { CompanyEntity, AddressEntity } from '@ngfire-showcase/company-domain';
