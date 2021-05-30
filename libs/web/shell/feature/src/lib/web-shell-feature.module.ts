@@ -67,6 +67,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes, { initialNavigation: 'enabled' }),
     SharedDataAccessFirebaseModule.forRoot({
       firebaseConfig: environment.firebase,
+      useEmulators: true,
     }),
     SharedConfigTranslocoModule.forRoot(environment.production),
     StoreModule.forRoot({}),
