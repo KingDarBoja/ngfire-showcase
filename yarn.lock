@@ -325,6 +325,20 @@
   dependencies:
     eslint-scope "^5.1.0"
 
+"@angular-three/controls@^1.0.0-beta.29":
+  version "1.0.0-beta.29"
+  resolved "https://registry.yarnpkg.com/@angular-three/controls/-/controls-1.0.0-beta.29.tgz#59e9102cb8ef2ba318af6798de5969f0e23816b3"
+  integrity sha512-SYwjShWOWVhBpVXiIcli/k2UNbgHwg4UYaTcUdnBqdipnHgNHlN2KRXW79HWREF2HaLqRPZgSDzrwJ6yRN+45Q==
+  dependencies:
+    tslib "^2.0.0"
+
+"@angular-three/core@^1.0.0-beta.29":
+  version "1.0.0-beta.29"
+  resolved "https://registry.yarnpkg.com/@angular-three/core/-/core-1.0.0-beta.29.tgz#5ca388e1533b8979d503a5ae17e65b07b5d4e814"
+  integrity sha512-HM8gjK/cF8PnWTM5I0IsUAgtANFV6vcFX0QZJubCdzoXzOiyoS4YctUJdyXoId7kYDAvO0vt8Oi7FSCA1PQ/Vg==
+  dependencies:
+    tslib "^2.0.0"
+
 "@angular/animations@12.0.0":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-12.0.0.tgz#5f845b1a58ffb6f3ea6103edf0756ac65320b725"
@@ -2378,7 +2392,7 @@
     replace-in-file "^4.1.2"
     tslib "^1.9.0"
 
-"@ngrx/component-store@12.0.0":
+"@ngrx/component-store@^12.0.0":
   version "12.0.0"
   resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-12.0.0.tgz#af9c3fa1715a54048b8886511e78bd1120a5a50f"
   integrity sha512-DZjsarbN6kajWQELfRZFJCV1A+3xuk+Sw1VvMhHIbnd5CBmmrtgfg+dwQgzX5Fe/WnoPwd1/kp+NpfPw60SFSA==
@@ -3115,6 +3129,11 @@
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/stack-utils/-/stack-utils-2.0.0.tgz#7036640b4e21cc2f259ae826ce843d277dad8cff"
   integrity sha512-RJJrrySY7A8havqpGObOB4W92QXKJo63/jFLLgpvOtsGUqbQZ9Sbgl35KMm1DjC6j7AvmmU2bIno+3IyEaemaw==
+
+"@types/three@0.128.0":
+  version "0.128.0"
+  resolved "https://registry.yarnpkg.com/@types/three/-/three-0.128.0.tgz#e5ce4c42d138a64dd90e83dbdb9919cf0d424d8e"
+  integrity sha512-Jwq5XYUkzAcPTo34hlGAQGUyAI0b2F3aCCFWG/v7ZhJBEG5HGcusMSr70GhDlT8Gs0f02QnSPZ2RCA1MrCOa/w==
 
 "@types/webpack-sources@^0.1.5":
   version "0.1.8"
@@ -14867,6 +14886,11 @@ text-table@0.2.0, text-table@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha1-f17oI66AUgfACvLfSoTsP8+lcLQ=
+
+three@0.128:
+  version "0.128.0"
+  resolved "https://registry.yarnpkg.com/three/-/three-0.128.0.tgz#884dacca6a330e45600a09ec5439283f50b76aa6"
+  integrity sha512-i0ap/E+OaSfzw7bD1TtYnPo3VEplkl70WX5fZqZnfZsE3k3aSFudqrrC9ldFZfYFkn1zwDmBcdGfiIm/hnbyZA==
 
 throat@^5.0.0:
   version "5.0.0"
