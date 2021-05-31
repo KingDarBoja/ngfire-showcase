@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 import { ThreeCoreModule } from '@angular-three/core';
 import { ThreeMeshModule } from '@angular-three/core/meshes';
 import { ThreeAxesHelperModule } from '@angular-three/core/helpers';
 import { ThreeSphereBufferGeometryModule } from '@angular-three/core/geometries';
-import { ThreeMeshBasicMaterialModule } from '@angular-three/core/materials';
+import {
+  ThreeMeshBasicMaterialModule,
+  ThreeShaderMaterialModule,
+} from '@angular-three/core/materials';
 import { ThreeOrbitControlsModule } from '@angular-three/controls/orbit-controls';
 
 import {
@@ -17,11 +21,13 @@ import {
 @NgModule({
   imports: [
     CommonModule,
+    HttpClientModule,
     ThreeCoreModule,
     ThreeMeshModule,
     ThreeAxesHelperModule,
     ThreeOrbitControlsModule,
     ThreeSphereBufferGeometryModule,
+    ThreeShaderMaterialModule,
     ThreeMeshBasicMaterialModule,
   ],
   exports: [PlanetComponent],

@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
-import { PlanetModule } from '../planet/planet.module';
+import { WebUiPlanetModule } from '@ngfire-showcase/web/ui/planet';
 
 @NgModule({
   declarations: [DashboardComponent],
   imports: [
     CommonModule,
-    PlanetModule,
+    WebUiPlanetModule,
     RouterModule.forChild([{ path: '', component: DashboardComponent }]),
   ],
 })

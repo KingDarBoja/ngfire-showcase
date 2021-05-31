@@ -25,7 +25,7 @@ import { Component } from '@angular/core';
     </div>
 
     <section class="canvas-container">
-      <ngf-shell-planet></ngf-shell-planet>
+      <ngf-web-planet></ngf-web-planet>
     </section>
   `,
 })

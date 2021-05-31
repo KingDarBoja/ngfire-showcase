@@ -58,6 +58,11 @@
                 "glob": "**/*",
                 "input": "libs/shared/assets/src/assets",
                 "output": "assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "libs/web/ui/planet/assets",
+                "output": "assets"
               }
             ],
             "styles": ["libs/shared/styles/src/index.scss"],
@@ -674,6 +679,46 @@
           "options": {
             "jestConfig": "libs/company/domain/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "web-ui-planet": {
+      "projectType": "library",
+      "root": "libs/web/ui/planet",
+      "sourceRoot": "libs/web/ui/planet/src",
+      "prefix": "ngfire-showcase",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "options": {
+            "project": "libs/web/ui/planet/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/ui/planet/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/web/ui/planet/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/web/ui/planet"],
+          "options": {
+            "jestConfig": "libs/web/ui/planet/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/web/ui/planet/src/**/*.ts",
+              "libs/web/ui/planet/src/**/*.html"
+            ]
           }
         }
       }

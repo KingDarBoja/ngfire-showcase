@@ -30,7 +30,7 @@
       "implicitDependencies": ["coljobs"]
     },
     "web-ui-form": {
-      "tags": ["scope:shared", "type:ui"]
+      "tags": ["scope:web", "type:ui"]
     },
     "shared-util-sdk": {
       "tags": ["scope:shared", "type:util"]
@@ -88,6 +88,9 @@
     },
     "company-domain": {
       "tags": ["scope:company", "type:domain"]
+    },
+    "web-ui-planet": {
+      "tags": ["scope:web", "type:ui"]
     }
   }
 }

@@ -20,5 +20,6 @@ module.exports = {
     '<rootDir>/libs/shared/util/object',
     '<rootDir>/apps/coljobs-api',
     '<rootDir>/libs/company/domain',
+    '<rootDir>/libs/web/ui/planet',
   ],
 };
