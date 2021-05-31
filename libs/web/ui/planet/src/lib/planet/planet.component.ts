@@ -12,8 +12,11 @@ import {
   AdditiveBlending,
   AxesHelper,
   BackSide,
+  BufferGeometry,
   DoubleSide,
+  Float32BufferAttribute,
   Mesh,
+  PointsMaterialParameters,
   ShaderMaterialParameters,
   SphereBufferGeometry,
   TextureLoader,
@@ -30,6 +33,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
     >
       <ngt-axes-helper [args]="axesArgs"></ngt-axes-helper>
       <ngf-web-orbit-control></ngf-web-orbit-control>
+      <ngf-web-star></ngf-web-star>
       <ngf-web-globe [geometry]="sphereGeometry"></ngf-web-globe>
       <ngf-web-atmosphere [geometry]="sphereGeometry"></ngf-web-atmosphere>
     </ngt-canvas>
@@ -154,4 +158,33 @@ export class AtmosphereComponent {
   );
 
   constructor(private readonly httpClient: HttpClient) {}
+}
+
+@Component({
+  selector: 'ngf-web-star',
+  template: `
+    <ngt-points [geometry]="starGeometry">
+      <ngt-points-material [parameters]="parameters"></ngt-points-material>
+    </ngt-points>
+  `,
+})
+export class StarComponent {
+  parameters: PointsMaterialParameters = {
+    color: '#ffffff',
+  };
+  starVertices = new Array(10000).fill(0).reduce<number[]>((arr) => {
+    const x = (Math.random() - 0.5) * 2000;
+    const y = (Math.random() - 0.5) * 2000;
+    const z = -Math.random() * 2000;
+    arr.push(x, y, z);
+    return arr;
+  }, []);
+  starGeometry = new BufferGeometry();
+
+  constructor() {
+    this.starGeometry.setAttribute(
+      'position',
+      new Float32BufferAttribute(this.starVertices, 3),
+    );
+  }
 }
