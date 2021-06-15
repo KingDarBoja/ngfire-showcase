@@ -1,7 +1,32 @@
 import { FormlyFieldConfig, FormlyTemplateOptions } from '@ngx-formly/core';
 import { FlatBounded } from '@ngfire-showcase/shared/util/data-structures';
+import { ThemePalette } from '@angular/material/core';
+
+interface ButtonTemplateOptions extends FormlyTemplateOptions {
+  text: string;
+  type?: 'button' | 'submit' | 'reset';
+  btnType: 'raised' | 'stroked' | 'flat' | 'icon' | 'fab' | 'mini-fab';
+  color?: ThemePalette;
+  autofocus?: boolean;
+  onClick?: (event$: unknown) => void;
+}
 
 export class WebUiFormField implements FormlyFieldConfig {
+  static button(
+    templateOptions?: ButtonTemplateOptions,
+    options?: FormlyFieldConfig,
+  ) {
+    const defaults = { color: 'primary', autofocus: false, type: 'button' };
+    return {
+      type: 'button',
+      templateOptions: {
+        ...defaults,
+        ...templateOptions,
+      },
+      ...options,
+    };
+  }
+
   static checkbox<T>(
     key: FlatBounded<T>,
     templateOptions?: FormlyTemplateOptions,
