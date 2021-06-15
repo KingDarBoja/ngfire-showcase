@@ -21,12 +21,12 @@ import { Component } from '@angular/core';
   template: `
     <div class="content">
       <h2>Dashboard</h2>
-      <h4>ThreeJS Demo with @angular/threejs</h4>
+      <!-- <h4>ThreeJS Demo with @angular/threejs</h4> -->
     </div>
 
-    <section class="canvas-container">
+    <!-- <section class="canvas-container">
       <ngf-web-planet></ngf-web-planet>
-    </section>
+    </section> -->
   `,
 })
 export class DashboardComponent {}
