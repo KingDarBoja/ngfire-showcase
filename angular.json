@@ -623,7 +623,7 @@
                 "command": "nx run coljobs-api:build --with-deps && nx run coljobs-api:build --watch"
               },
               {
-                "command": "firebase emulators:start --config firebase.coljobs-api.json"
+                "command": "firebase emulators:start --config firebase.coljobs-api.json --import=apps/coljobs-api/emulator-data"
               }
             ],
             "parallel": true
