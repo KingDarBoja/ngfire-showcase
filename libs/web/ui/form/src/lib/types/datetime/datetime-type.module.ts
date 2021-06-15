@@ -11,6 +11,7 @@ import {
   MatDateFnsModule,
   MAT_DATE_FNS_LOCALES,
 } from '@matheo/datepicker/date-fns';
+import { getMonth, getYear } from 'date-fns';
 import { es, enUS } from 'date-fns/esm/locale';
 
 import { DatetimeComponent } from './datetime-type.component';
@@ -29,6 +30,10 @@ import { DatetimeComponent } from './datetime-type.component';
         {
           name: 'date',
           component: DatetimeComponent,
+          defaultOptions: {
+            parsers: [(value: Date | number) => value.valueOf()],
+            templateOptions: { type: 'date', readonly: true },
+          },
           wrappers: ['form-field'],
         },
         {
@@ -50,6 +55,7 @@ import { DatetimeComponent } from './datetime-type.component';
           extends: 'date',
           defaultOptions: {
             templateOptions: { type: 'month', readonly: true },
+            parsers: [(value: Date | number) => getMonth(value)],
           },
         },
         {
@@ -57,6 +63,7 @@ import { DatetimeComponent } from './datetime-type.component';
           extends: 'date',
           defaultOptions: {
             templateOptions: { type: 'year', readonly: true },
+            parsers: [(value: Date | number) => getYear(value)],
           },
         },
       ],
