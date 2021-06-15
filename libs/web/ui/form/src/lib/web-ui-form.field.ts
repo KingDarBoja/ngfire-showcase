@@ -120,10 +120,12 @@ export class WebUiFormField implements FormlyFieldConfig {
   static fieldRow(
     fieldGroup: FormlyFieldConfig[] = [],
     fieldGroupClassName: string = 'flex',
+    config: FormlyFieldConfig = {},
   ): FormlyFieldConfig {
     return {
       fieldGroup,
       fieldGroupClassName,
+      ...config,
     };
   }
 

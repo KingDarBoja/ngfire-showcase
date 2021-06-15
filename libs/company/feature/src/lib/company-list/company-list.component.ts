@@ -29,12 +29,9 @@ export class CompanyListComponent {
   ) {}
 
   addCompany() {
-    const dialogRef = this.dialog.open(AddCompanyDialogComponent, {
+    this.dialog.open(AddCompanyDialogComponent, {
       width: '480px',
       data: { name: 'King Company', address: [{}] } as CompanyEntity,
-    });
-    dialogRef.componentInstance.submitForm.subscribe((res) => {
-      console.log('The dialog was closed', res);
     });
   }
 }

@@ -1,14 +1,19 @@
-import { Component, EventEmitter, Inject, Output } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { FormlyFieldConfig } from '@ngx-formly/core';
-import { BehaviorSubject } from 'rxjs';
+import { FormlyFieldConfig, FormlyFormOptions } from '@ngx-formly/core';
 
 import { WebUiFormField } from '@ngfire-showcase/web/ui/form';
 import {
   AddressEntity,
   CompanyEntity,
 } from '@ngfire-showcase/company/data-access';
+
+type AddCompanyDialogOptions = Omit<FormlyFormOptions, 'formState'> & {
+  formState: {
+    spinner: boolean;
+  };
+};
 
 @Component({
   template: `
@@ -18,35 +23,25 @@ import {
         [form]="form"
         [fields]="fields"
         [model]="data"
+        [options]="options"
         (submitForm)="submit($event)"
       >
-        <!-- <section class="flex flex-row justify-end space-x-6 mt-6">
-          <button
-            mat-stroked-button
-            color="warn"
-            (click)="onCancel()"
-            cdkFocusInitial
-          >
-            Cancel
-          </button>
-          <button
-            mat-flat-button
-            color="accent"
-            [disabled]="!form.valid"
-            type="submit"
-          >
-            Save
-          </button>
-        </section> -->
+        <ng-container *ngIf="options.formState.spinner">
+          <section class="flex justify-center mt-6">
+            <mat-spinner diameter="24"></mat-spinner>
+          </section>
+        </ng-container>
       </ngf-form>
     </div>
   `,
 })
 export class AddCompanyDialogComponent {
-  private readonly _spinner$ = new BehaviorSubject<boolean>(false);
-  readonly spinner$ = this._spinner$.asObservable();
-
   form = new FormGroup({});
+  options: AddCompanyDialogOptions = {
+    formState: {
+      spinner: false,
+    },
+  };
   fields: FormlyFieldConfig[] = [
     WebUiFormField.input<CompanyEntity>('name', {
       label: 'Name',
@@ -93,17 +88,20 @@ export class AddCompanyDialogComponent {
           },
           {
             expressionProperties: {
-              'templateOptions.disabled': () => {
-                return this.form.invalid;
-              },
+              'templateOptions.disabled': () => this.form.invalid,
             },
           },
         ),
       ],
       'flex justify-end gap-6 mt-6',
+      {
+        hideExpression: (
+          model: CompanyEntity,
+          formState: AddCompanyDialogOptions['formState'],
+        ) => formState.spinner,
+      },
     ),
   ];
-  @Output() submitForm = new EventEmitter();
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public readonly data: CompanyEntity,
@@ -116,5 +114,6 @@ export class AddCompanyDialogComponent {
 
   submit(model: CompanyEntity) {
     console.log(model);
+    this.options.formState.spinner = true;
   }
 }
