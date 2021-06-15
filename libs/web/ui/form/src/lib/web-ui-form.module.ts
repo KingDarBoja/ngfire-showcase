@@ -17,7 +17,7 @@ import { WebUiFormComponent } from './web-ui-form.component';
     FormlyMaterialModule,
     FormlyModule.forRoot({
       extras: {
-        checkExpressionOn: 'modelChange',
+        checkExpressionOn: 'changeDetectionCheck',
         lazyRender: true,
       },
     }),
